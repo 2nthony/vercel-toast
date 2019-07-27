@@ -1,0 +1,59 @@
+/* global Saika */
+import '../dist/toast.css'
+import { createToast, destoryAllToasts } from '../dist/toast'
+
+new Saika({
+  target: 'app',
+  nav: [
+    {
+      title: 'GitHub',
+      link: 'https://github.com/evillt/toast'
+    }
+  ],
+  postMixins: [
+    {
+      mounted() {
+        createToast('Love this toast?', {
+          action: {
+            text: 'YES'
+          }
+        })
+      },
+      methods: {
+        destoryAllToasts,
+
+        selfDestory() {
+          createToast('Hello world', {
+            timeout: 2000
+          })
+        },
+
+        action() {
+          createToast('Hello world', {
+            action: {
+              text: 'Awesome!',
+              callback(toast) {
+                if (window.confirm('SING LOUDER!')) {
+                  toast.destory()
+                }
+              }
+            }
+          })
+        },
+
+        withType(type) {
+          createToast('Hello world', {
+            timeout: 2000,
+            type
+          })
+        }
+      }
+    }
+  ],
+  posts: [
+    {
+      title: 'documentation',
+      link: 'documentation'
+    }
+  ]
+})

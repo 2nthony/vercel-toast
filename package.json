@@ -1,0 +1,58 @@
+{
+  "name": "@evillt/toast",
+  "description": "Display a brief toast at the browser",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "evillt/toast"
+  },
+  "author": "evillt <ijoec123@gmail.com> (https://evila.me)",
+  "main": "dist/toast.min.js",
+  "module": "dist/toast.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/index.d.ts",
+    "dist/toast.esm.js",
+    "dist/toast.js",
+    "dist/toast.min.js",
+    "dist/toast.css",
+    "dist/toast.min.css"
+  ],
+  "scripts": {
+    "test": "echo lol",
+    "example": "poi --serve --config example/poi.config.js",
+    "example:build": "poi --prod --config example/poi.config.js",
+    "build": "bili",
+    "docs": "typedoc src/index.ts --out example/public/docs --mode file --readme none --theme minimal --excludeNotExported",
+    "now-build": "npm run example:build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@evillt/vuedown-loader": "^1.0.1",
+    "bili": "^4.8.1",
+    "husky": "^3.0.1",
+    "lint-staged": "^9.2.1",
+    "poi": "^12.7.1",
+    "postcss-preset-env": "^6.7.0",
+    "prettier": "^1.17.0",
+    "rollup-plugin-typescript2": "^0.22.1",
+    "saika": "^0.7.2",
+    "typedoc": "^0.15.0",
+    "typescript": "^3.5.3",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10",
+    "vuedown": "^3.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

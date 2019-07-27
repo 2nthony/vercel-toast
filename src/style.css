@@ -1,0 +1,120 @@
+.toast-container {
+  --radius: 5px;
+  --toast-displacement: -14px;
+
+  position: fixed;
+  display: block;
+  max-width: 420px;
+  bottom: 10px;
+  right: 20px;
+  z-index: 2000;
+  transition: opacity .4s ease;
+
+  &[aria-destorying] {
+    opacity: 0;
+  }
+
+  & .toast {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 420px;
+    height: 72px;
+    opacity: 1;
+    transition: all 0.4s ease;
+    transform: translate3d(0, 86px, 0);
+
+    & .toast-inner {
+      height: 60px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      color: #fff;
+
+      &.default {
+        color: #000;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+      }
+
+      &.success {
+        background-color: #0076ff;
+      }
+
+      &.error {
+        background-color: #f04;
+      }
+
+      &.warning {
+        background-color: #f5a623;
+      }
+    }
+
+    & .toast-text {
+      width: 70%;
+      font-size: 14px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      margin-top: -1px;
+    }
+
+    & .toast-button {
+      min-width: auto;
+      height: 24px;
+      line-height: 22px;
+      padding: 0 10px;
+      font-size: 14px;
+      background-color: #000;
+      color: #fff;
+      white-space: nowrap;
+      user-select: none;
+      cursor: pointer;
+      vertical-align: middle;
+      border-radius: var(--radius);
+      outline: none;
+      overflow: hidden;
+      border: 1px solid #000;
+      transition: all .2s ease;
+
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+    }
+
+    &[aria-hidden='true'] {
+      opacity: 0;
+    }
+
+    &.toast-1 {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.toast-2 {
+      transform: translate3d(0, var(--toast-displacement), 0) scale(.95);
+    }
+
+    &.toast-3 {
+      transform: translate3d(0, calc(var(--toast-displacement) * 2), 0) scale(.9);
+    }
+
+    &.toast-4 {
+      transform: translate3d(0, calc(var(--toast-displacement) * 3), 0) scale(.85);
+      opacity: 0;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .toast-container {
+    max-width: 90vw;
+    right: 5vw;
+
+    & .toast {
+      width: 90vw;
+    }
+  }
+}
