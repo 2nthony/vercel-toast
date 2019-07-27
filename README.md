@@ -10,6 +10,12 @@
 
 ![](https://unpkg.com/@evillt/media@latest/projects/toast/main.gif)
 
+## Install
+
+```console
+yarn add @evillt/toast
+```
+
 ## Documentation
 
 https://toast.evila.me/#/documentation
