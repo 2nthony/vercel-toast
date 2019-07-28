@@ -1,6 +1,6 @@
 /* global Saika */
-import '../dist/toast.css'
-import { createToast, destoryAllToasts } from '../dist/toast'
+import '../src/style.css'
+import { createToast, destoryAllToasts } from '../src'
 
 new Saika({
   target: 'app',

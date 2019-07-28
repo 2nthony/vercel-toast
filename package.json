@@ -28,12 +28,13 @@
     "example:build": "poi --prod --config example/poi.config.js",
     "build": "bili",
     "docs": "typedoc src/index.ts --out example/public/docs --mode file --readme none --theme minimal --excludeNotExported",
-    "now-build": "npm run build && npm run example:build",
+    "now-build": "npm run example:build",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {},
   "devDependencies": {
     "@evillt/vuedown-loader": "^1.0.1",
+    "@poi/plugin-typescript": "^12.2.1",
     "bili": "^4.8.1",
     "husky": "^3.0.1",
     "lint-staged": "^9.2.1",
