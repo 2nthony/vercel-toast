@@ -20,6 +20,10 @@ yarn add @evillt/toast
 
 https://toast.evila.me/#/documentation
 
+## Credits
+
+- [zeit/design's toast](https://zeit.co/design/toast)
+
 ## Contributing
 
 1. Fork it!
