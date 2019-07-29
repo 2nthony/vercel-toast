@@ -1,6 +1,8 @@
 .toast-container {
   --radius: 5px;
-  --toast-displacement: -14px;
+  --toast-gap: -12px;
+  --height: 72px;
+  --negative-height: calc(0px - var(--height));
 
   position: fixed;
   display: block;
@@ -8,7 +10,7 @@
   bottom: 10px;
   right: 20px;
   z-index: 2000;
-  transition: opacity .4s ease;
+  transition: all .4s ease;
 
   &[aria-destorying] {
     opacity: 0;
@@ -19,7 +21,7 @@
     bottom: 0;
     right: 0;
     width: 420px;
-    height: 72px;
+    height: var(--height);
     opacity: 1;
     transition: all 0.4s ease;
     transform: translate3d(0, 86px, 0);
@@ -94,17 +96,31 @@
     }
 
     &.toast-2 {
-      transform: translate3d(0, var(--toast-displacement), 0) scale(.95);
+      transform: translate3d(0, var(--toast-gap), 0) scale(.95);
     }
 
     &.toast-3 {
-      transform: translate3d(0, calc(var(--toast-displacement) * 2), 0) scale(.9);
+      transform: translate3d(0, calc(var(--toast-gap) * 2), 0) scale(.9);
     }
 
     &.toast-4 {
-      transform: translate3d(0, calc(var(--toast-displacement) * 3), 0) scale(.85);
+      transform: translate3d(0, calc(var(--toast-gap) * 3), 0) scale(.85);
       opacity: 0;
     }
+  }
+}
+
+.toast-container:hover {
+  & .toast-2 {
+    transform: translate3d(0, var(--negative-height), 0);
+  }
+
+  & .toast-3 {
+    transform: translate3d(0, calc(var(--negative-height) * 2), 0);
+  }
+
+  & .toast-4 {
+    transform: translate3d(0, calc(var(--negative-height) * 3), 0);
   }
 }
 
