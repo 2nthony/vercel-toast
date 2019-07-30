@@ -87,11 +87,6 @@ export class Toast {
 
     this.startTimer()
 
-    // Stop timer when mouse enter
-    el.addEventListener('mouseenter', () => this.stopTimer())
-    // Restart timer when mouse leave
-    el.addEventListener('mouseleave', () => this.startTimer())
-
     this.el = el
 
     container.appendChild(el)
@@ -129,6 +124,16 @@ export class Toast {
       container.className = 'toast-container'
       document.body.appendChild(container)
     }
+
+    // Stop all instance timer when mouse enter
+    container.addEventListener('mouseenter', () => {
+      instances.forEach(instance => instance.stopTimer())
+    })
+
+    // Restart all instance timer when mouse leave
+    container.addEventListener('mouseleave', () => {
+      instances.forEach(instance => instance.stopTimer())
+    })
 
     // Listen to destory all
     const eventName = getTransitionEvent(container)
