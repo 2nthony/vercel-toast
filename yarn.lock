@@ -7014,9 +7014,9 @@ safe-regex@^1.1.0:
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
 saika@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/saika/-/saika-0.7.2.tgz#24d1f5eca16287f30536f15dcf98f1438c8e68e2"
-  integrity sha512-jQSmBURWN0ORL0uz7YOI1I0B5KYOjKXwnU+6rIF8u8mLPfQn64Nkmw4wOAT3akwEV3N7H0fNNtz2kkyBFb7sew==
+  version "0.7.3"
+  resolved "https://registry.yarnpkg.com/saika/-/saika-0.7.3.tgz#eff9a7c6511c8575277c936ad04eca56d1f66423"
+  integrity sha512-kDDVzsf7EwsGB0qwAeIwxMqAmPD4SfXn//MqwgbD94jp11zXUkC2U8JXNuKvqD4EaR1NQWsr8Nn+bYq+BvUFQw==
   dependencies:
     jump.js "^1.0.2"
     loadjs "^3.6.1"
