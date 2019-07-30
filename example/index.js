@@ -33,9 +33,8 @@ new Saika({
             action: {
               text: 'Awesome!',
               callback(toast) {
-                if (window.confirm('SING LOUDER!')) {
-                  toast.destory()
-                }
+                console.log('You just closed me.')
+                toast.destory()
               }
             }
           })
