@@ -26,6 +26,10 @@ createToast('Hello world')
 </script>
 ```
 
+<a href="/docs/">API Docs</a>
+
+[GitHub](https://github.com/evillt/toast)
+
 ## Examples
 
 ### Destory all toasts

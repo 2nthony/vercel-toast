@@ -28,7 +28,7 @@
     "example:build": "poi --prod --config example/poi.config.js",
     "build": "bili",
     "docs": "typedoc src/index.ts --out example/public/docs --mode file --readme none --theme minimal --excludeNotExported",
-    "now-build": "npm run example:build",
+    "now-build": "npm run docs && npm run example:build",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {},
