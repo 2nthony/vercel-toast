@@ -132,7 +132,7 @@ export class Toast {
 
     // Restart all instance timer when mouse leave
     container.addEventListener('mouseleave', () => {
-      instances.forEach(instance => instance.stopTimer())
+      instances.forEach(instance => instance.startTimer())
     })
 
     // Listen to destory all
