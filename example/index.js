@@ -1,4 +1,5 @@
-/* global Saika */
+import 'saika/dist/saika.css'
+import Saika from 'saika'
 import '../src/style.css'
 import { createToast, destoryAllToasts } from '../src'
 
