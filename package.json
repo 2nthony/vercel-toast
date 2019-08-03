@@ -33,7 +33,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@evillt/vuedown-loader": "^1.0.1",
     "@poi/plugin-typescript": "^12.2.1",
     "bili": "^4.8.1",
     "husky": "^3.0.1",
