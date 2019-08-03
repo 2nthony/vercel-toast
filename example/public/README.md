@@ -2,7 +2,7 @@
 
 A tiny browser library for displaying a brief toast at the right-bottom of the screen (≈1KB Gzipped).
 
-## Use with bundler
+## Use via bundler
 
 ```js
 import '@evillt/toast/dist/toast.css'
@@ -11,7 +11,7 @@ import { createToast } from '@evillt/toast'
 createToast('Hello world')
 ```
 
-## Use via script tag
+## Use via CDN
 
 ```html
 <link
@@ -25,6 +25,8 @@ createToast('Hello world')
   toast.createToast('Hello world')
 </script>
 ```
+
+## Explore
 
 <a href="/docs/">API Docs</a>
 

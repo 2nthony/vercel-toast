@@ -5,12 +5,16 @@ import { createToast, destoryAllToasts } from '../src'
 
 new Saika({
   target: 'app',
+  theme: 'readme',
   nav: [
     {
       title: 'GitHub',
       link: 'https://github.com/evillt/toast'
     }
   ],
+  router: {
+    mode: 'history'
+  },
   postMixins: [
     {
       mounted() {
@@ -48,12 +52,6 @@ new Saika({
           })
         }
       }
-    }
-  ],
-  posts: [
-    {
-      title: 'documentation',
-      link: 'documentation'
     }
   ]
 })
