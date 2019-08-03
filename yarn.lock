@@ -7006,10 +7006,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-saika@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/saika/-/saika-0.8.0.tgz#b7dfbf92d42a257921ede88eb1a42a6986e395ed"
-  integrity sha512-bg95F1/KVUTD5fzdOb7dXqnqMN5xHlBk+1pxfqA79ByDnQfIjAF+kBVTpJIa3wfmJgEQpWIUjEuC5icTf+ax8A==
+saika@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/saika/-/saika-0.8.1.tgz#0d6129298a5e7d28ed6fbb7041d984c9527690fd"
+  integrity sha512-q2jIjQAntfDD1QS7j1VMjZGNnP2sAOQYTsYzWNruuWPVfbEmsVs+MvImGa9pl81L48pMkv5s+G2mUxHR1ieGZQ==
   dependencies:
     jump.js "^1.0.2"
     loadjs "^3.6.1"
