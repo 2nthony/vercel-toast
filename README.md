@@ -18,7 +18,7 @@ yarn add @evillt/toast
 
 ## Documentation
 
-https://toast.evila.me/#/documentation
+https://toast.evila.me
 
 ## Credits
 
