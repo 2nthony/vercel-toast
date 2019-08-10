@@ -5,7 +5,6 @@ import { createToast, destoryAllToasts } from '../src'
 
 new Saika({
   target: 'app',
-  theme: 'readme',
   nav: [
     {
       title: 'GitHub',
@@ -15,6 +14,9 @@ new Saika({
   router: {
     mode: 'history'
   },
+  footer: `© {{ new Date().getFullYear() }} Made with <font color="#f04">❤</font> by
+  <a href="https://github.com/evillt">EVILLT</a>.
+  Powered by <a href="https://saika.dev">Saika</a>.`,
   postMixins: [
     {
       mounted() {
