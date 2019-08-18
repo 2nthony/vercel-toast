@@ -62,10 +62,12 @@ createToast('Hello world', {
 import { createToast } from '@evillt/toast'
 
 createToast('Hello world', {
-  text: 'Awesome!',
-  callback(toast) {
-    console.log('You just closed me.')
-    toast.destory()
+  action: {
+    text: 'Awesome!',
+    callback(toast) {
+      console.log('You just closed me.')
+      toast.destory()
+    }
   }
 })
 ```
