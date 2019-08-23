@@ -13,7 +13,7 @@
 ## Install
 
 ```console
-yarn add @evillt/toast
+$ yarn add @evillt/toast
 ```
 
 ## Documentation
