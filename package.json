@@ -41,7 +41,7 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.17.0",
     "rollup-plugin-typescript2": "^0.22.1",
-    "saika": "^2.2.2",
+    "saika": "^2.5.1",
     "typedoc": "^0.15.0",
     "typescript": "^3.5.3",
     "vue": "^2.6.10",
