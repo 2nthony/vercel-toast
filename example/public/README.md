@@ -98,3 +98,43 @@ createToast('Hello world', {
 <button @click="withType('success')">Show success</button>
 <button @click="withType('warning')">Show warning</button>
 <button @click="withType('error')">Show error</button>
+
+```js { mixin: true }
+{
+  mounted() {
+    createToast('Love this toast?', {
+      action: {
+        text: 'YES'
+      }
+    })
+  },
+  methods: {
+    destoryAllToasts,
+
+    selfDestory() {
+      createToast('Hello world', {
+        timeout: 2000
+      })
+    },
+
+    action() {
+      createToast('Hello world', {
+        action: {
+          text: 'Awesome!',
+          callback(toast) {
+            console.log('You just closed me.')
+            toast.destory()
+          }
+        }
+      })
+    },
+
+    withType(type) {
+      createToast('Hello world', {
+        timeout: 2000,
+        type
+      })
+    }
+  }
+}
+```
