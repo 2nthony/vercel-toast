@@ -140,7 +140,9 @@ export class Toast {
     if (eventName) {
       container.addEventListener(eventName, () => {
         if (container.hasAttribute('aria-destorying')) {
-          container.innerHTML = ''
+          while (container.firstChild) {
+            container.removeChild(container.firstChild)
+          }
           container.removeAttribute('aria-destorying')
         }
       })
