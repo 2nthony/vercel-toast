@@ -34,6 +34,7 @@
   "dependencies": {},
   "devDependencies": {
     "@poi/plugin-typescript": "^12.2.1",
+    "@saika/github-corner": "^0.1.0",
     "bili": "^4.8.1",
     "husky": "^3.0.1",
     "lint-staged": "^9.2.1",
@@ -41,7 +42,7 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.17.0",
     "rollup-plugin-typescript2": "^0.22.1",
-    "saika": "^2.5.1",
+    "saika": "^2.8.2",
     "typedoc": "^0.15.0",
     "typescript": "^3.5.3",
     "vue": "^2.6.10",

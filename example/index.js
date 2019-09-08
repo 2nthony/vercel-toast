@@ -1,5 +1,6 @@
 import 'saika/dist/saika.css'
 import Saika from 'saika'
+import ghCorner from '@saika/github-corner'
 import '../src/style.css'
 import { createToast, destoryAllToasts } from '../src'
 
@@ -17,6 +18,14 @@ new Saika({
   router: {
     mode: 'history'
   },
+
+  plugins: [
+    ghCorner({
+      repo: 'evillt/toast',
+      pinned: true
+    })
+  ],
+
   footer: `© {{ new Date().getFullYear() }} Made with <font color="#f04">❤</font> by
   <a href="https://github.com/evillt">EVILLT</a>.
   Powered by <a href="https://saika.dev">Saika</a>.`

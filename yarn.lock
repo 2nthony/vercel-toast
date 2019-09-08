@@ -851,6 +851,11 @@
   resolved "https://registry.yarnpkg.com/@poi/pnp-webpack-plugin/-/pnp-webpack-plugin-0.0.2.tgz#4633d4445637a2ed3b3da7f831ea7ee38587e6d7"
   integrity sha512-5yqBjV6yZzrJBYVG6ASAbhRhAQMjEu1nYDPJFbpPDcfNxEvsO+QwIxFq3ABQwH0iq59nI62v8VtxEc/z+jDFOg==
 
+"@saika/github-corner@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@saika/github-corner/-/github-corner-0.1.0.tgz#6ca1dc08df82fa398639bac2cc75570c7573b939"
+  integrity sha512-ucFurQu1PvZOIxIR8gxmR1orWrul/iVFQ3hrXg6dzs/MRUsW/KxodNvswRaaWPuWZZw6UsXqWaiqIZbRzFzHrw==
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -7006,10 +7011,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-saika@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/saika/-/saika-2.5.1.tgz#b9a99c04069568b91ba12e033a468e30f4951932"
-  integrity sha512-5i4cDv9+u6Kfj4rju6Og+BmxyJu3r5qkEwnYjsRxhcYE+Y5nradcSgl/F4w781+DgphDjPOzpruA+k9ypowasA==
+saika@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/saika/-/saika-2.8.2.tgz#0b1d5ae1876f72660f12c04ef77fdca0791d3d80"
+  integrity sha512-bdXqulx5pTW2aO8reH4Wzg014V+9tmp1I//yBBioNCSSxcSW/gQLmZ0AX8xBPMWTh1ULNtoEF57Oa+q+Dzc8UA==
   dependencies:
     jump.js "^1.0.2"
     loadjs "^3.6.1"
