@@ -1,5 +1,3 @@
-import 'saika/dist/saika.css'
-import Saika from 'saika'
 import ghCorner from '@saika/github-corner'
 import '../src/style.css'
 import { createToast, destoryAllToasts } from '../src'
@@ -9,6 +7,7 @@ window.destoryAllToasts = destoryAllToasts
 
 new Saika({
   target: 'app',
+  highlight: ['bash'],
   nav: [
     {
       title: 'GitHub',

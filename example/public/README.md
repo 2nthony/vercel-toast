@@ -4,6 +4,8 @@ A tiny browser library for displaying a brief toast at the right-bottom of the s
 
 ## Use via bundler
 
+<Snippet text="npm install @evillt/toast" />
+
 ```js
 import '@evillt/toast/dist/toast.css'
 import { createToast } from '@evillt/toast'
