@@ -49,7 +49,7 @@ export class Toast {
     instances.add(this)
   }
 
-  async insert(): Promise<void> {
+  insert(): void {
     const el = document.createElement('div')
     el.className = 'toast'
     el.setAttribute('aria-live', 'assertive')
@@ -92,28 +92,30 @@ export class Toast {
     container.appendChild(el)
 
     // Delay to set slide-up transition
-    await waitFor(50)
-    el.classList.add('toast-1')
+    waitFor(50).then(() => {
+      el.classList.add('toast-1')
 
-    sortToast()
+      sortToast()
+    })
   }
 
-  async destory(): Promise<void> {
+  destory(): void {
     const { el } = this
     if (el) {
       el.setAttribute('aria-hidden', 'true')
-      await new Promise(resolve => {
+      new Promise(resolve => {
         const eventName = getTransitionEvent(el)
         if (eventName) {
           el.addEventListener(eventName, () => resolve())
         } else {
           resolve()
         }
-      })
-      container.removeChild(el)
-      instances.delete(this)
+      }).then(() => {
+        container.removeChild(el)
+        instances.delete(this)
 
-      sortToast()
+        sortToast()
+      })
     }
   }
 
