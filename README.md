@@ -22,7 +22,7 @@ https://toast.evila.me
 
 ## Credits
 
-- [zeit/design's toast](https://zeit.co/design/toast)
+- [vercel/design's toast](https://vercel.com/design/toast)
 
 ## Contributing
 
