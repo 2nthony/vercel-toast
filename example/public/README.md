@@ -4,7 +4,9 @@ A tiny browser library for displaying a brief toast at the right-bottom of the s
 
 ## Use via bundler
 
-<Snippet text="npm install @evillt/toast" />
+```bash
+npm install @evillt/toast
+```
 
 ```js
 import '@evillt/toast/dist/toast.css'
@@ -46,7 +48,7 @@ destoryAllToasts()
 
 <button @click="destoryAllToasts">Destory all toast</button>
 
-### Self-destory in specific timeout
+### Default
 
 ```js
 import { createToast } from '@evillt/toast'
@@ -56,9 +58,9 @@ createToast('Hello world', {
 })
 ```
 
-<button @click="selfDestory">Show toast</button>
+<button @click="showDefault">Show toast</button>
 
-### Action button
+### Action
 
 ```js
 import { createToast } from '@evillt/toast'
@@ -75,6 +77,25 @@ createToast('Hello world', {
 ```
 
 <button @click="action">Show toast</button>
+
+### Action + Cancel
+
+```js
+import { createToast } from '@evillt/toast'
+
+createToast('Hello world', {
+  action: {
+    text: 'Awesome!',
+    callback(toast) {
+      console.log('You just closed me.')
+      toast.destory()
+    },
+    cancel: 'Cancel'
+  }
+})
+```
+
+<button @click="actionAndCancel">Show toast</button>
 
 ### With types
 
@@ -104,16 +125,12 @@ createToast('Hello world', {
 ```js { mixin: true }
 {
   mounted() {
-    createToast('Love this toast?', {
-      action: {
-        text: 'YES'
-      }
-    })
+    this.showDefault()
   },
   methods: {
     destoryAllToasts,
 
-    selfDestory() {
+    showDefault() {
       createToast('Hello world', {
         timeout: 2000
       })
@@ -128,6 +145,19 @@ createToast('Hello world', {
             toast.destory()
           }
         }
+      })
+    },
+
+    actionAndCancel() {
+      createToast('Hello world', {
+        action: {
+          text: 'Awesome!',
+          callback(toast) {
+            console.log('You just closed me.')
+            toast.destory()
+          }
+        },
+        cancel: 'Cancel'
       })
     },
 
