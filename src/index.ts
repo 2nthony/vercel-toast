@@ -24,6 +24,7 @@ export interface ToastOptions {
    */
   type?: 'success' | 'error' | 'warning' | 'default'
   action?: Action
+  cancel?: string
 }
 
 export class Toast {
@@ -34,13 +35,14 @@ export class Toast {
   private timeoutId?: number
 
   constructor(message: string, options: ToastOptions = {}) {
-    const { timeout = 0, action, type = 'default' } = options
+    const { timeout = 0, action, type = 'default', cancel } = options
 
     this.message = message
     this.options = {
       timeout,
       action,
-      type
+      type,
+      cancel
     }
 
     this.setContainer()
@@ -56,7 +58,7 @@ export class Toast {
     el.setAttribute('aria-atomic', 'true')
     el.setAttribute('aria-hidden', 'false')
 
-    const { action, type } = this.options
+    const { action, type, cancel } = this.options
 
     const inner = document.createElement('div')
     inner.className = 'toast-inner'
@@ -67,19 +69,28 @@ export class Toast {
     text.textContent = this.message
     inner.appendChild(text)
 
+    if (cancel) {
+      const button = document.createElement('button')
+      button.className = 'toast-button cancel-button'
+      button.textContent = cancel
+      button.type = 'text'
+      button.onclick = () => this.destory()
+      inner.appendChild(button)
+    }
+
     if (action) {
       const button = document.createElement('button')
       button.className = 'toast-button'
       button.textContent = action.text
       button.type = 'text'
-      button.addEventListener('click', () => {
+      button.onclick = () => {
         this.stopTimer()
         if (action.callback) {
           action.callback(this)
         } else {
           this.destory()
         }
-      })
+      }
       inner.appendChild(button)
     }
 
@@ -92,9 +103,7 @@ export class Toast {
     container.appendChild(el)
 
     // Delay to set slide-up transition
-    waitFor(50).then(() => {
-      sortToast()
-    })
+    waitFor(50).then(sortToast)
   }
 
   destory(): void {
@@ -198,9 +207,10 @@ function getTransitionEvent(el: HTMLDivElement): string | undefined {
 function sortToast(): void {
   const toasts = [...instances]
   toasts.forEach((toast, index) => {
+    const i = toasts.length - index
     const el = toast.el as HTMLDivElement
-    if (toasts.length - index <= 4) {
-      el.className = `toast toast-${toasts.length - index}`
+    if (i <= 4) {
+      el.className = `toast toast-${i}`
     }
   })
 }

@@ -55,7 +55,7 @@
     }
 
     & .toast-text {
-      width: 70%;
+      width: 100%;
       font-size: 14px;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -77,13 +77,20 @@
       vertical-align: middle;
       border-radius: var(--radius);
       outline: none;
-      overflow: hidden;
       border: 1px solid #000;
       transition: all .2s ease;
+
+      &.cancel-button {
+        margin-right: 10px;
+        color: #666;
+        border-color: #eaeaea;
+        background-color: #fff;
+      }
 
       &:hover {
         background-color: #fff;
         color: #000;
+        border-color: #000;
       }
     }
 
