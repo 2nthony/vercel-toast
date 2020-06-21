@@ -24,6 +24,7 @@ export interface ToastOptions {
    */
   type?: 'success' | 'error' | 'warning' | 'default'
   action?: Action
+  cancel?: string
 }
 
 export class Toast {
@@ -34,13 +35,14 @@ export class Toast {
   private timeoutId?: number
 
   constructor(message: string, options: ToastOptions = {}) {
-    const { timeout = 0, action, type = 'default' } = options
+    const { timeout = 0, action, type = 'default', cancel } = options
 
     this.message = message
     this.options = {
       timeout,
       action,
-      type
+      type,
+      cancel
     }
 
     this.setContainer()
@@ -49,14 +51,14 @@ export class Toast {
     instances.add(this)
   }
 
-  async insert(): Promise<void> {
+  insert(): void {
     const el = document.createElement('div')
     el.className = 'toast'
     el.setAttribute('aria-live', 'assertive')
     el.setAttribute('aria-atomic', 'true')
     el.setAttribute('aria-hidden', 'false')
 
-    const { action, type } = this.options
+    const { action, type, cancel } = this.options
 
     const inner = document.createElement('div')
     inner.className = 'toast-inner'
@@ -65,21 +67,31 @@ export class Toast {
     text.className = 'toast-text'
     inner.classList.add(type as string)
     text.textContent = this.message
+    text.title = this.message
     inner.appendChild(text)
+
+    if (cancel) {
+      const button = document.createElement('button')
+      button.className = 'toast-button cancel-button'
+      button.textContent = cancel
+      button.type = 'text'
+      button.onclick = () => this.destory()
+      inner.appendChild(button)
+    }
 
     if (action) {
       const button = document.createElement('button')
       button.className = 'toast-button'
       button.textContent = action.text
       button.type = 'text'
-      button.addEventListener('click', () => {
+      button.onclick = () => {
         this.stopTimer()
         if (action.callback) {
           action.callback(this)
         } else {
           this.destory()
         }
-      })
+      }
       inner.appendChild(button)
     }
 
@@ -92,28 +104,26 @@ export class Toast {
     container.appendChild(el)
 
     // Delay to set slide-up transition
-    await waitFor(50)
-    el.classList.add('toast-1')
-
-    sortToast()
+    waitFor(50).then(sortToast)
   }
 
-  async destory(): Promise<void> {
+  destory(): void {
     const { el } = this
     if (el) {
       el.setAttribute('aria-hidden', 'true')
-      await new Promise(resolve => {
+      new Promise(resolve => {
         const eventName = getTransitionEvent(el)
         if (eventName) {
           el.addEventListener(eventName, () => resolve())
         } else {
           resolve()
         }
-      })
-      container.removeChild(el)
-      instances.delete(this)
+      }).then(() => {
+        container.removeChild(el)
+        instances.delete(this)
 
-      sortToast()
+        sortToast()
+      })
     }
   }
 
@@ -196,10 +206,12 @@ function getTransitionEvent(el: HTMLDivElement): string | undefined {
 }
 
 function sortToast(): void {
-  Array.from(instances).forEach((instance, index) => {
-    const el = instance.el as HTMLDivElement
-    if (instances.size - index <= 4) {
-      el.className = `toast toast-${instances.size - index}`
+  const toasts = [...instances]
+  toasts.forEach((toast, index) => {
+    const i = toasts.length - index
+    const el = toast.el as HTMLDivElement
+    if (i <= 4) {
+      el.className = `toast toast-${i}`
     }
   })
 }
