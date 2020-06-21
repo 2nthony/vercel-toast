@@ -125,7 +125,7 @@ createToast('Hello world', {
 ```js { mixin: true }
 {
   mounted() {
-    this.showDefault()
+    this.action()
   },
   methods: {
     destoryAllToasts,
