@@ -93,8 +93,6 @@ export class Toast {
 
     // Delay to set slide-up transition
     waitFor(50).then(() => {
-      el.classList.add('toast-1')
-
       sortToast()
     })
   }
@@ -198,10 +196,11 @@ function getTransitionEvent(el: HTMLDivElement): string | undefined {
 }
 
 function sortToast(): void {
-  Array.from(instances).forEach((instance, index) => {
-    const el = instance.el as HTMLDivElement
-    if (instances.size - index <= 4) {
-      el.className = `toast toast-${instances.size - index}`
+  const toasts = [...instances]
+  toasts.forEach((toast, index) => {
+    const el = toast.el as HTMLDivElement
+    if (toasts.length - index <= 4) {
+      el.className = `toast toast-${toasts.length - index}`
     }
   })
 }
