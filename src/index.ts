@@ -67,6 +67,7 @@ export class Toast {
     text.className = 'toast-text'
     inner.classList.add(type as string)
     text.textContent = this.message
+    text.title = this.message
     inner.appendChild(text)
 
     if (cancel) {
