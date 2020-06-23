@@ -206,7 +206,7 @@ function getTransitionEvent(el: HTMLDivElement): string | undefined {
 }
 
 function sortToast(): void {
-  const toasts = [...instances]
+  const toasts = Array.from(instances)
   toasts.forEach((toast, index) => {
     const i = toasts.length - index
     const el = toast.el as HTMLDivElement
