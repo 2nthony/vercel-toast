@@ -210,10 +210,24 @@ function sortToast(): void {
     .reverse()
     .slice(0, 4)
 
+  const heights: Array<number> = []
+
   toasts.forEach((toast, index) => {
     const sortIndex = index + 1
     const el = toast.el as HTMLDivElement
 
+    heights.push(el.clientHeight)
+
     el.className = `toast toast-${sortIndex}`
+    el.style.setProperty('--index', '' + sortIndex)
+
+    if (sortIndex > 1) {
+      const hoverOffsetY = heights
+        .slice(0, sortIndex - 1)
+        .reduce((res, next) => (res += next), 0)
+      el.style.setProperty('--hover-offset-y', `-${hoverOffsetY}px`)
+    } else {
+      el.style.removeProperty('--hover-offset-y')
+    }
   })
 }

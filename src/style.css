@@ -1,8 +1,6 @@
 .toast-container {
   --radius: 5px;
   --toast-gap: -12px;
-  --height: 72px;
-  --negative-height: calc(0px - var(--height));
 
   position: fixed;
   display: block;
@@ -21,24 +19,23 @@
     bottom: 0;
     right: 0;
     width: 420px;
-    height: var(--height);
     opacity: 1;
-    transition: all 0.4s ease;
+    transition: all .4s ease;
     transform: translate3d(0, 86px, 0);
+    opacity: 0;
 
     & .toast-inner {
-      height: 60px;
       border-radius: var(--radius);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 24px;
       color: #fff;
 
       &.default {
         color: #000;
         background-color: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .12);
       }
 
       &.success {
@@ -57,10 +54,8 @@
     & .toast-text {
       width: 100%;
       font-size: 14px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
       margin-top: -1px;
+      margin-right: 10px;
     }
 
     & .toast-button {
@@ -94,20 +89,34 @@
       }
     }
 
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + 1px);
+      width: 100%;
+      height: 20px;
+      background: transparent;
+    }
+
     &[aria-hidden='true'] {
-      opacity: 0;
+      opacity: 0 !important;
     }
 
     &.toast-1 {
       transform: translate3d(0, 0, 0);
+      opacity: 1;
     }
 
     &.toast-2 {
       transform: translate3d(0, var(--toast-gap), 0) scale(.95);
+      opacity: 1;
     }
 
     &.toast-3 {
       transform: translate3d(0, calc(var(--toast-gap) * 2), 0) scale(.9);
+      opacity: 1;
     }
 
     &.toast-4 {
@@ -118,16 +127,10 @@
 }
 
 .toast-container:hover {
-  & .toast-2 {
-    transform: translate3d(0, var(--negative-height), 0);
-  }
+  bottom: 20px;
 
-  & .toast-3 {
-    transform: translate3d(0, calc(var(--negative-height) * 2), 0);
-  }
-
-  & .toast-4 {
-    transform: translate3d(0, calc(var(--negative-height) * 3), 0);
+  & .toast {
+    transform: translate3d(0, calc(var(--hover-offset-y) - 20px * (var(--index) - 1)), 0);
   }
 }
 
