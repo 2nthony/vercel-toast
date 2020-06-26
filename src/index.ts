@@ -207,11 +207,13 @@ function getTransitionEvent(el: HTMLDivElement): string | undefined {
 
 function sortToast(): void {
   const toasts = Array.from(instances)
+    .reverse()
+    .slice(0, 4)
+
   toasts.forEach((toast, index) => {
-    const i = toasts.length - index
+    const sortIndex = index + 1
     const el = toast.el as HTMLDivElement
-    if (i <= 4) {
-      el.className = `toast toast-${i}`
-    }
+
+    el.className = `toast toast-${sortIndex}`
   })
 }
