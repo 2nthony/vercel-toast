@@ -18,10 +18,7 @@ createToast('Hello world')
 ## Use via CDN
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@evillt/toast/dist/toast.min.css"
-/>
+<link rel="stylesheet" href="https://unpkg.com/@evillt/toast/dist/toast.css" />
 
 <script src="https://unpkg.com/@evillt/toast"></script>
 
@@ -54,7 +51,7 @@ destoryAllToasts()
 import { createToast } from '@evillt/toast'
 
 createToast('Hello world', {
-  timeout: 2000 // in 2 seconds
+  timeout: 3000 // in 3 seconds
 })
 ```
 
@@ -103,17 +100,17 @@ createToast('Hello world', {
 import { createToast } from '@evillt/toast'
 
 createToast('Hello world', {
-  timeout: 2000,
+  timeout: 3000,
   type: 'success'
 })
 
 createToast('Hello world', {
-  timeout: 2000,
+  timeout: 3000,
   type: 'warning'
 })
 
 createToast('Hello world', {
-  timeout: 2000,
+  timeout: 3000,
   type: 'error'
 })
 ```
@@ -124,15 +121,12 @@ createToast('Hello world', {
 
 ```js { mixin: true }
 {
-  mounted() {
-    this.action()
-  },
   methods: {
     destoryAllToasts,
 
     showDefault() {
       createToast('Hello world', {
-        timeout: 2000
+        timeout: 3000
       })
     },
 
@@ -163,7 +157,7 @@ createToast('Hello world', {
 
     withType(type) {
       createToast('Hello world', {
-        timeout: 2000,
+        timeout: 3000,
         type
       })
     }
