@@ -38,7 +38,7 @@
     "bili": "^4.8.1",
     "husky": "^3.0.1",
     "lint-staged": "^9.2.1",
-    "poi": "^12.7.1",
+    "poi": "^12.8.0",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.17.0",
     "rollup-plugin-typescript2": "^0.27.1",

@@ -67,7 +67,6 @@ export class Toast {
     text.className = 'toast-text'
     inner.classList.add(type as string)
     text.textContent = this.message
-    text.title = this.message
     inner.appendChild(text)
 
     if (cancel) {
@@ -109,22 +108,12 @@ export class Toast {
 
   destory(): void {
     const { el } = this
-    if (el) {
-      el.setAttribute('aria-hidden', 'true')
-      new Promise(resolve => {
-        const eventName = getTransitionEvent(el)
-        if (eventName) {
-          el.addEventListener(eventName, () => resolve())
-        } else {
-          resolve()
-        }
-      }).then(() => {
-        container.removeChild(el)
-        instances.delete(this)
+    if (!el) return
 
-        sortToast()
-      })
-    }
+    container.removeChild(el)
+    instances.delete(this)
+
+    sortToast()
   }
 
   setContainer(): void {
@@ -144,19 +133,6 @@ export class Toast {
     container.addEventListener('mouseleave', () => {
       instances.forEach(instance => instance.startTimer())
     })
-
-    // Listen to destory all
-    const eventName = getTransitionEvent(container)
-    if (eventName) {
-      container.addEventListener(eventName, () => {
-        if (container.hasAttribute('aria-destorying')) {
-          while (container.firstChild) {
-            container.removeChild(container.firstChild)
-          }
-          container.removeAttribute('aria-destorying')
-        }
-      })
-    }
   }
 
   startTimer(): void {
@@ -184,34 +160,38 @@ export function destoryAllToasts(): void {
   if (!container) return
 
   instances.clear()
-  if (container.hasChildNodes() && !container.hasAttribute('aria-destorying')) {
-    container.setAttribute('aria-destorying', '')
+  while (container.firstChild) {
+    container.removeChild(container.firstChild)
   }
-}
-
-function getTransitionEvent(el: HTMLDivElement): string | undefined {
-  const transition: { [k: string]: string } = {
-    transition: 'transitionend',
-    OTransition: 'oTransitionEnd',
-    MozTransition: 'transitionend',
-    WebkitTransition: 'webkitTransitionEnd'
-  }
-
-  for (const key in transition) {
-    if (el.style[key as any] !== undefined) {
-      return transition[key]
-    }
-  }
-  return
 }
 
 function sortToast(): void {
   const toasts = Array.from(instances)
+    .reverse()
+    .slice(0, 4)
+
+  const heights: Array<number> = []
+
   toasts.forEach((toast, index) => {
-    const i = toasts.length - index
+    const sortIndex = index + 1
     const el = toast.el as HTMLDivElement
-    if (i <= 4) {
-      el.className = `toast toast-${i}`
+    const height = +(el.getAttribute('data-height') || 0) || el.clientHeight
+
+    heights.push(height)
+
+    el.className = `toast toast-${sortIndex}`
+    el.dataset.height = '' + height
+    el.style.setProperty('--index', '' + sortIndex)
+    el.style.setProperty('--height', height + 'px')
+    el.style.setProperty('--front-height', `${heights[0]}px`)
+
+    if (sortIndex > 1) {
+      const hoverOffsetY = heights
+        .slice(0, sortIndex - 1)
+        .reduce((res, next) => (res += next), 0)
+      el.style.setProperty('--hover-offset-y', `-${hoverOffsetY}px`)
+    } else {
+      el.style.removeProperty('--hover-offset-y')
     }
   })
 }
