@@ -215,11 +215,15 @@ function sortToast(): void {
   toasts.forEach((toast, index) => {
     const sortIndex = index + 1
     const el = toast.el as HTMLDivElement
+    const height = +(el.getAttribute('data-height') || 0) || el.clientHeight
 
-    heights.push(el.clientHeight)
+    heights.push(height)
 
     el.className = `toast toast-${sortIndex}`
+    el.dataset.height = '' + height
     el.style.setProperty('--index', '' + sortIndex)
+    el.style.setProperty('--height', height + 'px')
+    el.style.setProperty('--front-height', `${heights[0]}px`)
 
     if (sortIndex > 1) {
       const hoverOffsetY = heights

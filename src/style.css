@@ -1,6 +1,5 @@
 .toast-container {
   --radius: 5px;
-  --toast-gap: -12px;
 
   position: fixed;
   display: block;
@@ -19,7 +18,6 @@
     bottom: 0;
     right: 0;
     width: 420px;
-    opacity: 1;
     transition: all .4s ease;
     transform: translate3d(0, 86px, 0);
     opacity: 0;
@@ -31,6 +29,8 @@
       justify-content: space-between;
       padding: 24px;
       color: #fff;
+      height: var(--height);
+      transition: all .25s ease;
 
       &.default {
         color: #000;
@@ -52,10 +52,14 @@
     }
 
     & .toast-text {
+      display: flex;
+      align-items: center;
       width: 100%;
+      height: 100%;
       font-size: 14px;
       margin-top: -1px;
       margin-right: 10px;
+      transition: all .3s ease;
     }
 
     & .toast-button {
@@ -109,28 +113,39 @@
       opacity: 1;
     }
 
-    &.toast-2 {
-      transform: translate3d(0, var(--toast-gap), 0) scale(.95);
+    &:not(:last-child) {
+      --i: calc(var(--index) - 1);
+      transform: translate3d(0, calc(0px - (20px * var(--i))), 0) scale(calc(1 - .05 * var(--i)));
       opacity: 1;
-    }
 
-    &.toast-3 {
-      transform: translate3d(0, calc(var(--toast-gap) * 2), 0) scale(.9);
-      opacity: 1;
+      & .toast-inner {
+        height: var(--front-height);
+
+        & .toast-text {
+          opacity: 0;
+          overflow: hidden;
+          align-items: flex-start;
+        }
+      }
     }
 
     &.toast-4 {
-      transform: translate3d(0, calc(var(--toast-gap) * 3), 0) scale(.85);
       opacity: 0;
     }
   }
 }
 
-.toast-container:hover {
-  bottom: 20px;
+.toast-container:hover .toast {
+  transform: translate3d(0, calc(var(--hover-offset-y) - 20px * (var(--index) - 1)), 0);
 
-  & .toast {
-    transform: translate3d(0, calc(var(--hover-offset-y) - 20px * (var(--index) - 1)), 0);
+  & .toast-inner {
+    height: var(--height);
+  }
+
+  & .toast-text {
+    opacity: 1 !important;
+    white-space: initial !important;
+    overflow: initial !important;
   }
 }
 
