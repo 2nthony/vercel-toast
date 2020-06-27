@@ -12,7 +12,7 @@ npm install @evillt/toast
 import '@evillt/toast/dist/toast.css'
 import { createToast } from '@evillt/toast'
 
-createToast('Hello world')
+createToast('The Evil Rabbit jumped over the fence.')
 ```
 
 ## Use via CDN
@@ -23,7 +23,7 @@ createToast('Hello world')
 <script src="https://unpkg.com/@evillt/toast"></script>
 
 <script>
-  toast.createToast('Hello world')
+  toast.createToast('The Evil Rabbit jumped over the fence.')
 </script>
 ```
 
@@ -50,23 +50,37 @@ destoryAllToasts()
 ```js
 import { createToast } from '@evillt/toast'
 
-createToast('Hello world', {
+createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000 // in 3 seconds
 })
 ```
 
 <button @click="showDefault">Show toast</button>
 
+## Multiline
+
+```js
+import { createToast } from '@evillt/toast'
+
+createToast(
+  'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.',
+  {
+    timeout: 3000
+  }
+)
+```
+
+<button @click="multiline">Show toast</button>
+
 ### Action
 
 ```js
 import { createToast } from '@evillt/toast'
 
-createToast('Hello world', {
+createToast('The Evil Rabbit jumped over the fence.', {
   action: {
-    text: 'Awesome!',
+    text: 'Undo',
     callback(toast) {
-      console.log('You just closed me.')
       toast.destory()
     }
   }
@@ -80,16 +94,18 @@ createToast('Hello world', {
 ```js
 import { createToast } from '@evillt/toast'
 
-createToast('Hello world', {
-  action: {
-    text: 'Awesome!',
-    callback(toast) {
-      console.log('You just closed me.')
-      toast.destory()
-    },
-    cancel: 'Cancel'
+createToast(
+  'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence again.',
+  {
+    action: {
+      text: 'Undo',
+      callback(toast) {
+        toast.destory()
+      },
+      cancel: 'Cancel'
+    }
   }
-})
+)
 ```
 
 <button @click="actionAndCancel">Show toast</button>
@@ -99,17 +115,17 @@ createToast('Hello world', {
 ```js
 import { createToast } from '@evillt/toast'
 
-createToast('Hello world', {
+createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000,
   type: 'success'
 })
 
-createToast('Hello world', {
+createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000,
   type: 'warning'
 })
 
-createToast('Hello world', {
+createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000,
   type: 'error'
 })
@@ -125,17 +141,22 @@ createToast('Hello world', {
     destoryAllToasts,
 
     showDefault() {
-      createToast('Hello world', {
+      createToast('The Evil Rabbit jumped over the fence.', {
+        timeout: 3000
+      })
+    },
+
+    multiline() {
+      createToast('The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.', {
         timeout: 3000
       })
     },
 
     action() {
-      createToast('Hello world', {
+      createToast('The Evil Rabbit jumped over the fence.', {
         action: {
-          text: 'Awesome!',
+          text: 'Undo',
           callback(toast) {
-            console.log('You just closed me.')
             toast.destory()
           }
         }
@@ -143,11 +164,10 @@ createToast('Hello world', {
     },
 
     actionAndCancel() {
-      createToast('Hello world', {
+      createToast('The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence again.', {
         action: {
-          text: 'Awesome!',
+          text: 'Undo',
           callback(toast) {
-            console.log('You just closed me.')
             toast.destory()
           }
         },
@@ -156,7 +176,7 @@ createToast('Hello world', {
     },
 
     withType(type) {
-      createToast('Hello world', {
+      createToast('The Evil Rabbit jumped over the fence.', {
         timeout: 3000,
         type
       })
