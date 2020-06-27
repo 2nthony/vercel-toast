@@ -8,7 +8,7 @@
 [![License](https://badgen.net/npm/license/@evillt/toast)](./LICENSE)
 [![donate](https://badgen.net/badge/support%20me/donate/f2a)](https://donate.evila.me)
 
-![](media/toast.gif)
+![](media/toast2.gif)
 
 ## Install
 
