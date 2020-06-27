@@ -107,7 +107,7 @@
 
     &:not(:last-child) {
       --i: calc(var(--index) - 1);
-      transform: translate3d(0, calc(0px - (var(--stack-gap) * var(--i))), 0) scale(calc(1 - .05 * var(--i)));
+      transform: translate3d(0, calc(1px - (var(--stack-gap) * var(--i))), 0) scale(calc(1 - .05 * var(--i)));
       opacity: 1;
 
       & .toast-inner {
