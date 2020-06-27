@@ -9,10 +9,6 @@
   z-index: 2000;
   transition: all .4s ease;
 
-  &[aria-destorying] {
-    opacity: 0;
-  }
-
   & .toast {
     position: absolute;
     bottom: 0;
@@ -102,10 +98,6 @@
       width: 100%;
       height: 20px;
       background: transparent;
-    }
-
-    &[aria-hidden='true'] {
-      opacity: 0 !important;
     }
 
     &.toast-1 {

@@ -109,22 +109,12 @@ export class Toast {
 
   destory(): void {
     const { el } = this
-    if (el) {
-      el.setAttribute('aria-hidden', 'true')
-      new Promise(resolve => {
-        const eventName = getTransitionEvent(el)
-        if (eventName) {
-          el.addEventListener(eventName, () => resolve())
-        } else {
-          resolve()
-        }
-      }).then(() => {
-        container.removeChild(el)
-        instances.delete(this)
+    if (!el) return
 
-        sortToast()
-      })
-    }
+    container.removeChild(el)
+    instances.delete(this)
+
+    sortToast()
   }
 
   setContainer(): void {
@@ -144,19 +134,6 @@ export class Toast {
     container.addEventListener('mouseleave', () => {
       instances.forEach(instance => instance.startTimer())
     })
-
-    // Listen to destory all
-    const eventName = getTransitionEvent(container)
-    if (eventName) {
-      container.addEventListener(eventName, () => {
-        if (container.hasAttribute('aria-destorying')) {
-          while (container.firstChild) {
-            container.removeChild(container.firstChild)
-          }
-          container.removeAttribute('aria-destorying')
-        }
-      })
-    }
   }
 
   startTimer(): void {
@@ -184,25 +161,9 @@ export function destoryAllToasts(): void {
   if (!container) return
 
   instances.clear()
-  if (container.hasChildNodes() && !container.hasAttribute('aria-destorying')) {
-    container.setAttribute('aria-destorying', '')
+  while (container.firstChild) {
+    container.removeChild(container.firstChild)
   }
-}
-
-function getTransitionEvent(el: HTMLDivElement): string | undefined {
-  const transition: { [k: string]: string } = {
-    transition: 'transitionend',
-    OTransition: 'oTransitionEnd',
-    MozTransition: 'transitionend',
-    WebkitTransition: 'webkitTransitionEnd'
-  }
-
-  for (const key in transition) {
-    if (el.style[key as any] !== undefined) {
-      return transition[key]
-    }
-  }
-  return
 }
 
 function sortToast(): void {
