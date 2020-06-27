@@ -4,7 +4,7 @@
 
   position: fixed;
   display: block;
-  max-width: 420px;
+  max-width: 468px;
   bottom: 10px;
   right: 20px;
   z-index: 5000;
@@ -14,7 +14,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 420px;
+    width: 468px;
     transition: all .4s ease;
     transform: translate3d(0, 86px, 0);
     opacity: 0;
@@ -53,7 +53,7 @@
       height: 100%;
       font-size: 14px;
       margin-top: -1px;
-      margin-right: 10px;
+      margin-right: 24px;
       transition: all .3s ease-in;
     }
 
@@ -95,7 +95,8 @@
       right: 0;
       top: calc(100% + 1px);
       width: 100%;
-      height: var(--stack-gap);
+      /* This for destroy the middle toast, still keep `spread` */
+      height: 1000px;
       background: transparent;
     }
 
@@ -124,15 +125,19 @@
   }
 }
 
-.toast-container:hover .toast {
-  transform: translate3d(0, calc(var(--hover-offset-y) - var(--stack-gap) * (var(--index) - 1)), 0);
+.toast-container:hover{
+  bottom: 20px;
 
-  & .toast-inner {
-    height: var(--height);
-  }
+  & .toast {
+    transform: translate3d(0, calc(var(--hover-offset-y) - var(--stack-gap) * (var(--index) - 1)), 0);
 
-  & .toast-text {
-    opacity: 1 !important;
+    & .toast-inner {
+      height: var(--height);
+    }
+
+    & .toast-text {
+      opacity: 1 !important;
+    }
   }
 }
 
