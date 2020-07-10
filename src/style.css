@@ -20,6 +20,7 @@
     opacity: 0;
 
     & .toast-inner {
+      box-sizing: border-box;
       border-radius: var(--radius);
       display: flex;
       align-items: center;
