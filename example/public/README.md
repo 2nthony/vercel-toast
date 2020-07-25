@@ -1,4 +1,4 @@
-# Toast
+# vercel-toast
 
 Framework-agnostic vercel design's toast component (≈1KB Gzipped).
 
