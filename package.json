@@ -1,6 +1,6 @@
 {
   "name": "vercel-toast",
-  "description": "Display a brief toast at the browser",
+  "description": "Framework-agnostic vercel design's toast component",
   "publishConfig": {
     "access": "public"
   },

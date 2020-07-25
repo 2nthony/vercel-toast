@@ -1,6 +1,6 @@
 # vercel-toast
 
-> Display a brief toast at the browser
+> Framework-agnostic vercel design's toast component
 
 [![NPM version](https://badgen.net/npm/v/vercel-toast?icon=npm)](https://npmjs.com/package/vercel-toast)
 [![NPM download](https://badgen.net/npm/dm/vercel-toast?icon=npm)](https://npmjs.com/package/vercel-toast)
