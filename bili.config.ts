@@ -2,10 +2,10 @@ import { Config } from 'bili'
 
 export default {
   input: {
-    toast: 'src/index.ts'
+    'vercel-toast': 'src/index.ts'
   },
   output: {
-    moduleName: 'vercel-toast',
+    moduleName: 'toast',
     format: ['umd', 'umd-min', 'esm'],
     fileName({ format, minify }, defaultName) {
       if (format === 'umd') {
