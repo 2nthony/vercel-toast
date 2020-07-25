@@ -1,6 +1,6 @@
 # Toast
 
-A tiny browser library for displaying a brief toast at the right-bottom of the screen (≈1KB Gzipped).
+Framework-agnostic vercel design's toast component (≈1KB Gzipped).
 
 ## Use via bundler
 
