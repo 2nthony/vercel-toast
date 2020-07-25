@@ -5,7 +5,7 @@ export default {
     toast: 'src/index.ts'
   },
   output: {
-    moduleName: 'toast',
+    moduleName: 'vercel-toast',
     format: ['umd', 'umd-min', 'esm'],
     fileName({ format, minify }, defaultName) {
       if (format === 'umd') {

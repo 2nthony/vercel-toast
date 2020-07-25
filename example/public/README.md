@@ -1,16 +1,16 @@
-# Toast
+# vercel-toast
 
-A tiny browser library for displaying a brief toast at the right-bottom of the screen (≈1KB Gzipped).
+Framework-agnostic vercel design's toast component (≈1KB Gzipped).
 
 ## Use via bundler
 
 ```bash
-npm install @evillt/toast
+npm install vercel-toast
 ```
 
 ```js
-import '@evillt/toast/dist/toast.css'
-import { createToast } from '@evillt/toast'
+import 'vercel-toast/dist/vercel-toast.css'
+import { createToast } from 'vercel-toast'
 
 createToast('The Evil Rabbit jumped over the fence.')
 ```
@@ -18,9 +18,12 @@ createToast('The Evil Rabbit jumped over the fence.')
 ## Use via CDN
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@evillt/toast/dist/toast.css" />
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/vercel-toast/dist/vercel-toast.css"
+/>
 
-<script src="https://unpkg.com/@evillt/toast"></script>
+<script src="https://unpkg.com/vercel-toast"></script>
 
 <script>
   toast.createToast('The Evil Rabbit jumped over the fence.')
@@ -31,14 +34,14 @@ createToast('The Evil Rabbit jumped over the fence.')
 
 <a href="/docs/">API Docs</a>
 
-[GitHub](https://github.com/evillt/toast)
+[GitHub](https://github.com/evillt/vercel-toast)
 
 ## Examples
 
 ### Destory all toasts
 
 ```js
-import { destoryAllToasts } from '@evillt/toast'
+import { destoryAllToasts } from 'vercel-toast'
 
 destoryAllToasts()
 ```
@@ -48,7 +51,7 @@ destoryAllToasts()
 ### Default
 
 ```js
-import { createToast } from '@evillt/toast'
+import { createToast } from 'vercel-toast'
 
 createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000 // in 3 seconds
@@ -60,7 +63,7 @@ createToast('The Evil Rabbit jumped over the fence.', {
 ## Multiline
 
 ```js
-import { createToast } from '@evillt/toast'
+import { createToast } from 'vercel-toast'
 
 createToast(
   'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.',
@@ -75,7 +78,7 @@ createToast(
 ### Action
 
 ```js
-import { createToast } from '@evillt/toast'
+import { createToast } from 'vercel-toast'
 
 createToast('The Evil Rabbit jumped over the fence.', {
   action: {
@@ -92,7 +95,7 @@ createToast('The Evil Rabbit jumped over the fence.', {
 ### Action + Cancel
 
 ```js
-import { createToast } from '@evillt/toast'
+import { createToast } from 'vercel-toast'
 
 createToast(
   'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence again.',
@@ -113,7 +116,7 @@ createToast(
 ### With types
 
 ```js
-import { createToast } from '@evillt/toast'
+import { createToast } from 'vercel-toast'
 
 createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000,

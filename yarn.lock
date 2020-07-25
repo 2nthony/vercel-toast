@@ -930,16 +930,6 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@evillt/copy@^1.0.2":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@evillt/copy/-/copy-1.0.3.tgz#61ab2883662ce9b03cd11863b9b82b028035e393"
-  integrity sha512-oSX57OWC0gikuKmwM07zAq8C6+KRlmAF9Ni36ADrB6JibiVVI9242GR5pstoC+4qaQ1A0eMVN2Gd+nNXlAMwbQ==
-
-"@evillt/toast@^1.1.3":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@evillt/toast/-/toast-1.1.3.tgz#ee16f6437a82205c973c846b1c8b6b476b20b164"
-  integrity sha512-gmUKJIjT03x5on5KwFciKA7iyFewwpAPee5PmpcmUVPtOTwPftX9FahsLkGVfrJKYPuSB+0mew6q3YyVL3OzEw==
-
 "@intervolga/optimize-cssnano-plugin@^1.0.6":
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/@intervolga/optimize-cssnano-plugin/-/optimize-cssnano-plugin-1.0.6.tgz#be7c7846128b88f6a9b1d1261a0ad06eb5c0fdf8"
@@ -7418,13 +7408,11 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-saika@^2.8.2:
-  version "2.12.2"
-  resolved "https://registry.yarnpkg.com/saika/-/saika-2.12.2.tgz#5b79e3c3267c2be5cead6969f8f07bb928ce1d16"
-  integrity sha512-mVgh5XYzxSC1izKs3KuncjlD+w9HavTj0MZwKHtx8xCOdBOeInF3R7maPEm5d55ZzhwxeV3YompT1rCKXe0g6g==
+saika@^2.12.3:
+  version "2.12.3"
+  resolved "https://registry.yarnpkg.com/saika/-/saika-2.12.3.tgz#ca1fac1edf9c9d3f0ed2880154ad11c910610591"
+  integrity sha512-koRbBK3vkbQ9VqD3Qbyzo14W+cbOmDfv+H6fYPd50wv39hTlZB8HqITcuGAPUMiL/hFipkDQ2D75ePBQuGZMlQ==
   dependencies:
-    "@evillt/copy" "^1.0.2"
-    "@evillt/toast" "^1.1.3"
     jump.js "^1.0.2"
     loadjs "^3.6.1"
     medium-zoom "^1.0.4"
