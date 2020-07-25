@@ -10,6 +10,8 @@ export interface Action {
   callback?: ActionCallback
 }
 
+export type Message = string | HTMLElement
+
 export type ActionCallback = (toast: Toast) => void
 
 export interface ToastOptions {
@@ -28,13 +30,13 @@ export interface ToastOptions {
 }
 
 export class Toast {
-  message: string
+  message: Message
   options: ToastOptions
   el?: HTMLDivElement
 
   private timeoutId?: number
 
-  constructor(message: string, options: ToastOptions = {}) {
+  constructor(message: Message, options: ToastOptions = {}) {
     const { timeout = 0, action, type = 'default', cancel } = options
 
     this.message = message
@@ -63,10 +65,16 @@ export class Toast {
     const inner = document.createElement('div')
     inner.className = 'toast-inner'
 
-    const text = document.createElement('span')
+    const text = document.createElement('div')
     text.className = 'toast-text'
     inner.classList.add(type as string)
-    text.textContent = this.message
+
+    if (typeof this.message === 'string') {
+      text.textContent = this.message
+    } else {
+      text.appendChild(this.message)
+    }
+
     inner.appendChild(text)
 
     if (cancel) {
@@ -152,7 +160,7 @@ export class Toast {
   }
 }
 
-export function createToast(message: string, options?: ToastOptions): Toast {
+export function createToast(message: Message, options?: ToastOptions): Toast {
   return new Toast(message, options)
 }
 
