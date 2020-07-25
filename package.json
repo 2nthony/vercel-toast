@@ -1,5 +1,5 @@
 {
-  "name": "@evillt/toast",
+  "name": "vercel-toast",
   "description": "Display a brief toast at the browser",
   "publishConfig": {
     "access": "public"
@@ -8,19 +8,19 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "evillt/toast"
+    "url": "evillt/vercel-toast"
   },
   "author": "evillt <ijoec123@gmail.com> (https://evila.me)",
-  "main": "dist/toast.min.js",
-  "module": "dist/toast.esm.js",
+  "main": "dist/vercel-toast.min.js",
+  "module": "dist/vercel-toast.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist/index.d.ts",
-    "dist/toast.esm.js",
-    "dist/toast.js",
-    "dist/toast.min.js",
-    "dist/toast.css",
-    "dist/toast.min.css"
+    "dist/vercel-toast.esm.js",
+    "dist/vercel-toast.js",
+    "dist/vercel-toast.min.js",
+    "dist/vercel-toast.css",
+    "dist/vercel-toast.min.css"
   ],
   "scripts": {
     "test": "echo lol",
@@ -42,7 +42,7 @@
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.17.0",
     "rollup-plugin-typescript2": "^0.27.1",
-    "saika": "^2.8.2",
+    "saika": "^2.12.3",
     "typedoc": "^0.15.0",
     "typescript": "^3.9.5",
     "vue": "^2.6.10",

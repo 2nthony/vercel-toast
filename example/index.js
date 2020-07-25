@@ -11,7 +11,7 @@ new Saika({
   nav: [
     {
       title: 'GitHub',
-      link: 'https://github.com/evillt/toast'
+      link: 'https://github.com/evillt/vercel-toast'
     }
   ],
   router: {
@@ -20,7 +20,7 @@ new Saika({
 
   plugins: [
     ghCorner({
-      repo: 'evillt/toast',
+      repo: 'evillt/vercel-toast',
       pinned: true
     })
   ],
