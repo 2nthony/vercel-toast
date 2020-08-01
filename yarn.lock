@@ -3094,10 +3094,10 @@ es6-object-assign@^1.1.0:
   resolved "https://registry.yarnpkg.com/es6-object-assign/-/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
   integrity sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw=
 
-esbuild@^0.6.6:
-  version "0.6.6"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.6.6.tgz#354227da80d9eb5ca855adb1217e1b4ef388dd67"
-  integrity sha512-eDnYl7ZT1kqkbvwY+sCuGC82cqRPuBRaU0Tqdx72wESLIjZNAF3plAtZBk1Ybku0U152Q1xWVvFpVdwVhhqDaw==
+esbuild@^0.6.13:
+  version "0.6.13"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.6.13.tgz#eb7641715efcdc16bdc5c6f5b1671cb5dc61c8ce"
+  integrity sha512-eTaeqZCna+g9cTqhdT/qn1n+ef8FinkjTHTEexn8mbCRxxqGlc1GfgiURXt74OAwHwH6IU2j/bX9NCyFBsi5KQ==
 
 escape-html@~1.0.3:
   version "1.0.3"
