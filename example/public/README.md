@@ -60,7 +60,7 @@ createToast('The Evil Rabbit jumped over the fence.', {
 
 <button @click="showDefault">Show toast</button>
 
-## Multiline
+### Multiline
 
 ```js
 import { createToast } from 'vercel-toast'
@@ -74,6 +74,19 @@ createToast(
 ```
 
 <button @click="multiline">Show toast</button>
+
+### Use a DOM node as message
+
+```js
+const message = document.createElement('div')
+message.innerHTML = `<i style="color:magenta;">The Evil Rabbit jumped over the fence.</i>`
+
+createToast(message, {
+  timeout: 3000
+})
+```
+
+<button @click="domNode">Show toast</button>
 
 ### Action
 
@@ -151,6 +164,14 @@ createToast('The Evil Rabbit jumped over the fence.', {
 
     multiline() {
       createToast('The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.', {
+        timeout: 3000
+      })
+    },
+
+    domNode() {
+      const message = document.createElement('div')
+      message.innerHTML = '<i style="color:magenta;">The Evil Rabbit jumped over the fence.</i>'
+      createToast(message, {
         timeout: 3000
       })
     },
