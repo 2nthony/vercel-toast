@@ -1,9 +1,6 @@
 {
   "name": "vercel-toast",
   "description": "Framework-agnostic vercel design's toast component",
-  "publishConfig": {
-    "access": "public"
-  },
   "version": "0.0.0",
   "license": "MIT",
   "repository": {
@@ -15,18 +12,16 @@
   "module": "dist/vercel-toast.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/index.d.ts",
-    "dist/vercel-toast.esm.js",
-    "dist/vercel-toast.js",
-    "dist/vercel-toast.min.js",
-    "dist/vercel-toast.css",
-    "dist/vercel-toast.min.css"
+    "dist/*.ts",
+    "dist/*.js",
+    "dist/*.css"
   ],
   "scripts": {
     "test": "echo lol",
     "example": "poi --serve --config example/poi.config.js",
     "example:build": "poi --prod --config example/poi.config.js",
-    "build": "bili",
+    "build": "node scripts/build.js && npm run gen-dts --scripts-prepend-node-path",
+    "gen-dts": "dts-bundle-generator src/index.ts -o dist/index.d.ts",
     "docs": "typedoc src/index.ts --out example/public/docs --mode file --readme none --theme minimal --excludeNotExported",
     "now-build": "npm run docs && npm run example:build",
     "prepublishOnly": "npm run build"
@@ -35,13 +30,14 @@
   "devDependencies": {
     "@poi/plugin-typescript": "^12.3.1",
     "@saika/github-corner": "^0.1.0",
-    "bili": "^4.8.1",
+    "dts-bundle-generator": "^5.1.0",
+    "esbuild": "^0.6.13",
     "husky": "^3.0.1",
     "lint-staged": "^9.2.1",
     "poi": "^12.8.0",
+    "postcss": "^7.0.32",
     "postcss-preset-env": "^6.7.0",
     "prettier": "^1.17.0",
-    "rollup-plugin-typescript2": "^0.27.1",
     "saika": "^2.12.3",
     "typedoc": "^0.15.0",
     "typescript": "^3.9.5",

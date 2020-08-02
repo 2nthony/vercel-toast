@@ -1,5 +1,3 @@
-import './style.css'
-
 const waitFor = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 let instances: Set<Toast> = new Set()
