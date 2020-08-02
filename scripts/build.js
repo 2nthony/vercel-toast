@@ -1,6 +1,7 @@
 const { build } = require('esbuild')
 const postcss = require('postcss')
 const fs = require('fs')
+const postcssConfig = require('../postcss.config')
 
 const baseConfig = {
   entryPoints: ['./src/index.ts'],
@@ -49,7 +50,7 @@ function buildJs() {
 function buildCss() {
   console.info('Building CSS', '`./dist/vercel-toast.css`')
   fs.readFile('./src/style.css', (_err, css) => {
-    postcss([require('postcss-preset-env')({ stage: 0 })])
+    postcss(postcssConfig.plugins)
       .process(css, { from: './src/style.css' })
       .then(({ css }) => {
         fs.writeFileSync('./dist/vercel-toast.css', css)
