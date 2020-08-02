@@ -1,9 +1,6 @@
 {
   "name": "vercel-toast",
   "description": "Framework-agnostic vercel design's toast component",
-  "publishConfig": {
-    "access": "public"
-  },
   "version": "0.0.0",
   "license": "MIT",
   "repository": {
@@ -15,11 +12,9 @@
   "module": "dist/vercel-toast.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/index.d.ts",
-    "dist/vercel-toast.css",
-    "dist/vercel-toast.js",
-    "dist/vercel-toast.esm.js",
-    "dist/vercel-toast.min.js"
+    "dist/*.ts",
+    "dist/*.js",
+    "dist/*.css"
   ],
   "scripts": {
     "test": "echo lol",
