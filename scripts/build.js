@@ -3,16 +3,16 @@ const postcss = require('postcss')
 const fs = require('fs')
 const postcssConfig = require('../postcss.config')
 
-const baseConfig = {
-  entryPoints: ['./src/index.ts'],
-  minify: true
-}
-
 buildJs()
 buildCss()
 
 // js
 function buildJs() {
+  const baseConfig = {
+    entryPoints: ['./src/index.ts'],
+    minify: true
+  }
+
   ;[
     // esm
     {
