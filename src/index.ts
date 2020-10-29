@@ -22,7 +22,7 @@ export interface ToastOptions {
    * Toast type
    * @default `default`
    */
-  type?: 'success' | 'error' | 'warning' | 'default'
+  type?: 'success' | 'error' | 'warning' | 'dark' | 'default'
   action?: Action
   cancel?: string
 }

@@ -47,6 +47,34 @@
       &.warning {
         background-color: #f5a623;
       }
+
+      &.dark {
+        background-color: #000;
+        color: #fff;
+        box-shadow: 0 0 0 1px #333;
+
+        & .toast-button {
+          color: #000;
+          background-color: #fff;
+          border-color: #fff;
+
+          &:hover {
+            background-color: #000;
+            color: #fff;
+          }
+
+          &.cancel-button {
+            border-color: #333;
+            background-color: #000;
+            color: #888;
+
+            &:hover {
+              color: #fff;
+              border-color: #fff;
+            }
+          }
+        }
+      }
     }
 
     & .toast-text {
