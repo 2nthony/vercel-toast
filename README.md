@@ -18,7 +18,7 @@ $ yarn add vercel-toast
 
 ## Documentation
 
-https://toast.evila.me
+https://vercel-toast.evila.me
 
 ## Credits
 
