@@ -20,32 +20,60 @@
     opacity: 0;
 
     & .toast-inner {
+      --toast-bg: none;
+      --toast-fg: #fff;
       box-sizing: border-box;
       border-radius: var(--radius);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 24px;
-      color: #fff;
+      color: var(--toast-fg);
+      background-color: var(--toast-bg);
       height: var(--height);
       transition: all .25s ease;
 
       &.default {
-        color: #000;
-        background-color: #fff;
+        --toast-fg: #000;
+        --toast-bg: #fff;
         box-shadow: 0 5px 10px rgba(0, 0, 0, .12);
       }
 
       &.success {
-        background-color: #0076ff;
+        --toast-bg: #0076ff;
       }
 
       &.error {
-        background-color: #f04;
+        --toast-bg: #f04;
       }
 
       &.warning {
-        background-color: #f5a623;
+        --toast-bg: #f5a623;
+      }
+
+      &.dark {
+        --toast-bg: #000;
+        --toast-fg: #fff;
+        box-shadow: 0 0 0 1px #333;
+
+        & .toast-button {
+          --button-fg: #000;
+          --button-bg: #fff;
+          --button-border: #fff;
+          --button-fg-hover: #fff;
+          --button-bg-hover: #000;
+
+          &.cancel-button {
+            --cancel-button-bg: #000;
+            --cancel-button-fg: #888;
+            --cancel-button-border: #333;
+
+            &:hover {
+              color: #fff;
+              border-color: var(--button-border);
+            }
+          }
+        }
       }
     }
 
@@ -59,33 +87,40 @@
     }
 
     & .toast-button {
+      --button-fg: #fff;
+      --button-bg: #000;
+      --button-border: #000;
+      --button-fg-hover: #000;
+      --button-bg-hover: #fff;
       min-width: auto;
       height: 24px;
       line-height: 22px;
       padding: 0 10px;
       font-size: 14px;
-      background-color: #000;
-      color: #fff;
+      background-color: var(--button-bg);
+      color: var(--button-fg);
       white-space: nowrap;
       user-select: none;
       cursor: pointer;
       vertical-align: middle;
       border-radius: var(--radius);
       outline: none;
-      border: 1px solid #000;
+      border: 1px solid var(--button-border);
       transition: all .2s ease;
 
-      &.cancel-button {
-        margin-right: 10px;
-        color: #666;
-        border-color: #eaeaea;
-        background-color: #fff;
+      &:hover {
+        background-color: var(--button-bg-hover);
+        color: var(--button-fg-hover);
       }
 
-      &:hover {
-        background-color: #fff;
-        color: #000;
-        border-color: #000;
+      &.cancel-button {
+        --cancel-button-bg: #fff;
+        --cancel-button-fg: #666;
+        --cancel-button-border: #eaeaea;
+        margin-right: 10px;
+        color: var(--cancel-button-fg);
+        border-color: var(--cancel-button-border);
+        background-color: var(--cancel-button-bg);
       }
     }
 

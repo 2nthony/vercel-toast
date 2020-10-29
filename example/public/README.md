@@ -58,7 +58,7 @@ createToast('The Evil Rabbit jumped over the fence.', {
 })
 ```
 
-<button @click="showDefault">Show toast</button>
+<button @click="showDefault">Show Toast</button>
 
 ### Multiline
 
@@ -73,7 +73,7 @@ createToast(
 )
 ```
 
-<button @click="multiline">Show toast</button>
+<button @click="multiline">Show Toast</button>
 
 ### Use a DOM node as message
 
@@ -86,7 +86,7 @@ createToast(message, {
 })
 ```
 
-<button @click="domNode">Show toast</button>
+<button @click="domNode">Show Toast</button>
 
 ### Action
 
@@ -103,7 +103,7 @@ createToast('The Evil Rabbit jumped over the fence.', {
 })
 ```
 
-<button @click="action">Show toast</button>
+<button @click="action">Show Toast</button>
 
 ### Action + Cancel
 
@@ -124,7 +124,7 @@ createToast(
 )
 ```
 
-<button @click="actionAndCancel">Show toast</button>
+<button @click="actionAndCancel">Show Toast</button>
 
 ### With types
 
@@ -145,11 +145,17 @@ createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000,
   type: 'error'
 })
+
+createToast('The Evil Rabbit jumped over the fence.', {
+  timeout: 3000,
+  type: 'dark'
+})
 ```
 
-<button @click="withType('success')">Show success</button>
-<button @click="withType('warning')">Show warning</button>
-<button @click="withType('error')">Show error</button>
+<button @click="withType('success')">Show Success</button>
+<button @click="withType('warning')">Show Warning</button>
+<button @click="withType('error')">Show Error</button>
+<button @click="withType('dark')">Show Dark</button>
 
 ```js { mixin: true }
 {
