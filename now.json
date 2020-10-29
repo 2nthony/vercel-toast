@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": ["toast.evila.me", "toast"],
+  "alias": ["toast.evila.me", "toast", "vercel-toast.evila.me", "vercel-toast"],
   "builds": [
     {
       "src": "package.json",

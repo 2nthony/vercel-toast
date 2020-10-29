@@ -1,6 +1,7 @@
 import ghCorner from '@saika/github-corner'
 import '../src/style.css'
 import { createToast, destoryAllToasts } from '../src'
+import { copyCode } from 'saika-code-block-buttons'
 
 window.createToast = createToast
 window.destoryAllToasts = destoryAllToasts
@@ -24,6 +25,8 @@ new Saika({
       pinned: true
     })
   ],
+
+  codeBlockButtons: [copyCode],
 
   footer: `© {{ new Date().getFullYear() }} Made with <font color="#f04">❤</font> by
   <a href="https://github.com/evillt">EVILLT</a>.
