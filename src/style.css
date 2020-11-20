@@ -121,6 +121,11 @@
         color: var(--cancel-button-fg);
         border-color: var(--cancel-button-border);
         background-color: var(--cancel-button-bg);
+
+        &:hover {
+          --cancel-button-fg: #000;
+          --cancel-button-border: #000;
+        }
       }
     }
 
