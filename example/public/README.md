@@ -117,9 +117,9 @@ createToast(
       text: 'Undo',
       callback(toast) {
         toast.destory()
-      },
-      cancel: 'Cancel'
-    }
+      }
+    },
+    cancel: 'Cancel'
   }
 )
 ```
