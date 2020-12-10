@@ -13,7 +13,7 @@
 ## Install
 
 ```console
-$ yarn add vercel-toast
+yarn add vercel-toast
 ```
 
 ## Documentation
