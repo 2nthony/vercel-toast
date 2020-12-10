@@ -60,6 +60,7 @@
           --button-fg: #000;
           --button-bg: #fff;
           --button-border: #fff;
+          --button-border-hover: #fff;
           --button-fg-hover: #fff;
 
           &.cancel-button {
@@ -86,10 +87,11 @@
     }
 
     & .toast-button {
-      --button-fg: #fff;
-      --button-bg: #000;
-      --button-border: #000;
-      --button-fg-hover: #000;
+      --button-fg: #000;
+      --button-bg: #fff;
+      --button-border: #fff;
+      --button-border-hover: #fff;
+      --button-fg-hover: #fff;
       min-width: auto;
       height: 24px;
       line-height: 22px;
@@ -107,6 +109,7 @@
       transition: all 0.2s ease;
 
       &:hover {
+        border-color: var(--button-border-hover);
         background-color: transparent;
         color: var(--button-fg-hover);
       }
@@ -125,6 +128,14 @@
           --cancel-button-border: #000;
         }
       }
+    }
+
+    & .default .toast-button {
+      --button-fg: #fff;
+      --button-bg: #000;
+      --button-border: #000;
+      --button-border-hover: #000;
+      --button-fg-hover: #000;
     }
 
     &:after {
