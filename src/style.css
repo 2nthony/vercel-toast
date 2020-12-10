@@ -61,7 +61,6 @@
           --button-bg: #fff;
           --button-border: #fff;
           --button-fg-hover: #fff;
-          --button-bg-hover: #000;
 
           &.cancel-button {
             --cancel-button-bg: #000;
@@ -91,7 +90,6 @@
       --button-bg: #000;
       --button-border: #000;
       --button-fg-hover: #000;
-      --button-bg-hover: #fff;
       min-width: auto;
       height: 24px;
       line-height: 22px;
@@ -109,7 +107,7 @@
       transition: all 0.2s ease;
 
       &:hover {
-        background-color: var(--button-bg-hover);
+        background-color: transparent;
         color: var(--button-fg-hover);
       }
 
