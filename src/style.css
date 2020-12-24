@@ -1,11 +1,12 @@
 .toast-container {
   --radius: 5px;
   --stack-gap: 20px;
+  --safe-area-gap: env(safe-area-inset-bottom);
 
   position: fixed;
   display: block;
   max-width: 468px;
-  bottom: 10px;
+  bottom: calc(var(--safe-area-gap, 0px) + 10px);
   right: 20px;
   z-index: 5000;
   transition: all 0.4s ease;
@@ -177,7 +178,7 @@
 }
 
 .toast-container:hover {
-  bottom: 20px;
+  bottom: calc(var(--safe-area-gap, 0px) + 20px);
 
   & .toast {
     transform: translate3d(
