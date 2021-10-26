@@ -112,6 +112,10 @@ export class Toast {
     waitFor(50).then(sortToast)
   }
 
+  destory(): void {
+    console.warn('please use `toast.destroy`');
+    this.destroy();
+  }
   destroy(): void {
     const { el } = this
     if (!el) return
@@ -160,6 +164,11 @@ export class Toast {
 
 export function createToast(message: Message, options?: ToastOptions): Toast {
   return new Toast(message, options)
+}
+
+export function destoryAllToasts(): void {
+  console.warn('please use `toast.destroyAllToasts`')
+  this.destroyAllToasts();
 }
 
 export function destroyAllToasts(): void {
