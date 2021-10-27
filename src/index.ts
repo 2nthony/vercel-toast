@@ -116,6 +116,7 @@ export class Toast {
     const { el } = this
     if (!el) return
 
+    this.stopTimer()
     container.removeChild(el)
     instances.delete(this)
 
@@ -172,10 +173,9 @@ export function createToast(message: Message, options?: ToastOptions): Toast {
 export function destroyAllToasts(): void {
   if (!container) return
 
-  instances.clear()
-  while (container.firstChild) {
-    container.removeChild(container.firstChild)
-  }
+  instances.forEach(instance => {
+    instance.destroy()
+  })
 }
 /**
  * @deprecated Please use `destroyAllToasts`
