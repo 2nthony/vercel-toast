@@ -23,7 +23,7 @@
     "build": "node scripts/build.js && npm run gen-dts --scripts-prepend-node-path",
     "gen-dts": "dts-bundle-generator src/index.ts -o dist/index.d.ts",
     "docs": "typedoc src/index.ts --out example/public/docs --mode file --readme none --theme minimal --excludeNotExported",
-    "now-build": "npm run docs && npm run example:build",
+    "build:docs": "npm run docs && npm run example:build",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
