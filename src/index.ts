@@ -15,7 +15,7 @@ export type ActionCallback = (toast: Toast) => void
 export interface ToastOptions {
   /**
    * Automatically destroy the toast in specific timeout (ms)
-   * @default `0` which means would not automatically destory the toast
+   * @default `0` which means would not automatically destroy the toast
    */
   timeout?: number
   /**
@@ -42,7 +42,7 @@ export class Toast {
       timeout,
       action,
       type,
-      cancel
+      cancel,
     }
 
     this.setContainer()
@@ -80,7 +80,7 @@ export class Toast {
       button.className = 'toast-button cancel-button'
       button.textContent = cancel
       button.type = 'text'
-      button.onclick = () => this.destory()
+      button.onclick = () => this.destroy()
       inner.appendChild(button)
     }
 
@@ -94,7 +94,7 @@ export class Toast {
         if (action.callback) {
           action.callback(this)
         } else {
-          this.destory()
+          this.destroy()
         }
       }
       inner.appendChild(button)
@@ -112,7 +112,7 @@ export class Toast {
     waitFor(50).then(sortToast)
   }
 
-  destory(): void {
+  destroy(): void {
     const { el } = this
     if (!el) return
 
@@ -120,6 +120,13 @@ export class Toast {
     instances.delete(this)
 
     sortToast()
+  }
+  /**
+   * @deprecated Please use `destroy`
+   */
+  destory(): void {
+    typoWarning('destory')
+    this.destroy()
   }
 
   setContainer(): void {
@@ -144,8 +151,8 @@ export class Toast {
   startTimer(): void {
     if (this.options.timeout && !this.timeoutId) {
       this.timeoutId = self.setTimeout(
-        () => this.destory(),
-        this.options.timeout
+        () => this.destroy(),
+        this.options.timeout,
       )
     }
   }
@@ -162,13 +169,20 @@ export function createToast(message: Message, options?: ToastOptions): Toast {
   return new Toast(message, options)
 }
 
-export function destoryAllToasts(): void {
+export function destroyAllToasts(): void {
   if (!container) return
 
   instances.clear()
   while (container.firstChild) {
     container.removeChild(container.firstChild)
   }
+}
+/**
+ * @deprecated Please use `destroyAllToasts`
+ */
+export function destoryAllToasts(): void {
+  typoWarning('destoryAllToasts')
+  destroyAllToasts()
 }
 
 function sortToast(): void {
@@ -200,4 +214,14 @@ function sortToast(): void {
       el.style.removeProperty('--hover-offset-y')
     }
   })
+}
+
+function typoWarning(method: string) {
+  console.warn(
+    '[vercel-toast]:',
+    `\`${method}\` is a typo function, please use \`${method.replace(
+      'or',
+      'ro',
+    )}\``,
+  )
 }
