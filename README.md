@@ -2,11 +2,10 @@
 
 > Framework-agnostic vercel design's toast component
 
-[![NPM version](https://badgen.net/npm/v/vercel-toast?icon=npm)](https://npmjs.com/package/vercel-toast)
-[![NPM download](https://badgen.net/npm/dm/vercel-toast?icon=npm)](https://npmjs.com/package/vercel-toast)
-[![CircleCI](https://badgen.net/circleci/github/evillt/vercel-toast?icon=circleci)](https://circleci.com/gh/evillt/vercel-toast/tree/master)
+[![NPM version](https://badgen.net/npm/v/vercel-toast)](https://npmjs.com/package/vercel-toast)
+[![NPM download](https://badgen.net/npm/dm/vercel-toast)](https://npmjs.com/package/vercel-toast)
 [![License](https://badgen.net/npm/license/vercel-toast)](./LICENSE)
-[![donate](https://badgen.net/badge/support%20me/donate/f2a)](https://donate.evila.me)
+[![buy me coffee](https://badgen.net/badge/buy%20me/coffee/f2a)](https://2nthony.notion.site/Buy-2nthony-Coffee-d67a508cd58e4896bfb50c7112f93f51)
 
 ![](media/toast2.gif)
 
