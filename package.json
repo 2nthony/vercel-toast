@@ -26,8 +26,8 @@
     "now-build": "npm run docs && npm run example:build",
     "prepublishOnly": "npm run build"
   },
-  "dependencies": {},
   "devDependencies": {
+    "@2nthony/prettier-config": "^1.0.0",
     "@poi/plugin-typescript": "^12.3.1",
     "@saika/github-corner": "^0.1.0",
     "dts-bundle-generator": "^5.1.0",
