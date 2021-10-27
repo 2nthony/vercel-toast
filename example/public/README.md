@@ -38,15 +38,15 @@ createToast('The Evil Rabbit jumped over the fence.')
 
 ## Examples
 
-### Destory all toasts
+### Destroy all toasts
 
 ```js
-import { destoryAllToasts } from 'vercel-toast'
+import { destroyAllToasts } from 'vercel-toast'
 
-destoryAllToasts()
+destroyAllToasts()
 ```
 
-<button @click="destoryAllToasts">Destory all toast</button>
+<button @click="destroyAllToasts">Destroy all toast</button>
 
 ### Default
 
@@ -54,7 +54,7 @@ destoryAllToasts()
 import { createToast } from 'vercel-toast'
 
 createToast('The Evil Rabbit jumped over the fence.', {
-  timeout: 3000 // in 3 seconds
+  timeout: 3000, // in 3 seconds
 })
 ```
 
@@ -68,8 +68,8 @@ import { createToast } from 'vercel-toast'
 createToast(
   'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.',
   {
-    timeout: 3000
-  }
+    timeout: 3000,
+  },
 )
 ```
 
@@ -82,7 +82,7 @@ const message = document.createElement('div')
 message.innerHTML = `<i style="color:magenta;">The Evil Rabbit jumped over the fence.</i>`
 
 createToast(message, {
-  timeout: 3000
+  timeout: 3000,
 })
 ```
 
@@ -97,9 +97,9 @@ createToast('The Evil Rabbit jumped over the fence.', {
   action: {
     text: 'Undo',
     callback(toast) {
-      toast.destory()
-    }
-  }
+      toast.destroy()
+    },
+  },
 })
 ```
 
@@ -116,11 +116,11 @@ createToast(
     action: {
       text: 'Undo',
       callback(toast) {
-        toast.destory()
-      }
+        toast.destroy()
+      },
     },
-    cancel: 'Cancel'
-  }
+    cancel: 'Cancel',
+  },
 )
 ```
 
@@ -133,22 +133,22 @@ import { createToast } from 'vercel-toast'
 
 createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000,
-  type: 'success'
+  type: 'success',
 })
 
 createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000,
-  type: 'warning'
+  type: 'warning',
 })
 
 createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000,
-  type: 'error'
+  type: 'error',
 })
 
 createToast('The Evil Rabbit jumped over the fence.', {
   timeout: 3000,
-  type: 'dark'
+  type: 'dark',
 })
 ```
 
@@ -160,7 +160,7 @@ createToast('The Evil Rabbit jumped over the fence.', {
 ```js { mixin: true }
 {
   methods: {
-    destoryAllToasts,
+    destroyAllToasts,
 
     showDefault() {
       createToast('The Evil Rabbit jumped over the fence.', {
@@ -187,7 +187,7 @@ createToast('The Evil Rabbit jumped over the fence.', {
         action: {
           text: 'Undo',
           callback(toast) {
-            toast.destory()
+            toast.destroy()
           }
         }
       })
@@ -198,7 +198,7 @@ createToast('The Evil Rabbit jumped over the fence.', {
         action: {
           text: 'Undo',
           callback(toast) {
-            toast.destory()
+            toast.destroy()
           }
         },
         cancel: 'Cancel'
