@@ -31,6 +31,10 @@ https://vercel-toast.evila.me
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
+## Sponsors
+
+[![sponsors](https://cdn.jsdelivr.net/gh/2nthony/sponsors-image/sponsors.svg)](https://github.com/sponsors/2nthony)
+
 ## Author
 
 **toast** © [evillt](https://github.com/evillt), Released under the [MIT](./LICENSE) License.
