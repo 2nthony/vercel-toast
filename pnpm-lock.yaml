@@ -1,25 +1,25 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@2nthony/prettier-config': ^1.0.0
-  '@poi/plugin-typescript': ^12.3.1
-  '@saika/github-corner': ^0.1.0
-  dts-bundle-generator: ^5.1.0
-  esbuild: ^0.6.13
-  husky: ^3.0.1
-  lint-staged: ^9.2.1
-  poi: ^12.8.0
-  postcss: ^7.0.32
-  postcss-preset-env: ^6.7.0
-  prettier: ^1.17.0
-  saika: ^2.12.3
-  saika-code-block-buttons: ^1.0.1
-  semantic-release: ^17.2.1
-  typedoc: ^0.15.0
-  typescript: ^3.9.5
-  vue: ^2.6.10
-  vue-template-compiler: ^2.6.10
-  vuedown: ^3.1.0
+  '@2nthony/prettier-config': 1.0.0
+  '@poi/plugin-typescript': 12.3.1
+  '@saika/github-corner': 0.1.1
+  dts-bundle-generator: 5.9.0
+  esbuild: 0.6.34
+  husky: 3.1.0
+  lint-staged: 9.5.0
+  poi: 12.10.3
+  postcss: 7.0.39
+  postcss-preset-env: 6.7.0
+  prettier: 1.19.1
+  saika: 2.13.7
+  saika-code-block-buttons: 1.0.1
+  semantic-release: 17.4.7
+  typedoc: 0.15.8
+  typescript: 3.9.10
+  vue: 2.6.14
+  vue-template-compiler: 2.6.14
+  vuedown: 3.2.0
 
 devDependencies:
   '@2nthony/prettier-config': 1.0.0
@@ -2292,6 +2292,7 @@ packages:
 
   /bindings/1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
+    requiresBuild: true
     dependencies:
       file-uri-to-path: 1.0.0
     dev: true
@@ -4178,6 +4179,7 @@ packages:
 
   /file-uri-to-path/1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -6227,6 +6229,7 @@ packages:
 
   /nan/2.15.0:
     resolution: {integrity: sha512-8ZtvEnA2c5aYCZYd1cvgdnU6cqwixRoYg70xPLWUws5ORTa/lnw+u4amixRS/Ac5U5mQVgp9pnlSUnbNWFaWZQ==}
+    requiresBuild: true
     dev: true
     optional: true
 
