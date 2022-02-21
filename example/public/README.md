@@ -34,7 +34,7 @@ createToast('The Evil Rabbit jumped over the fence.')
 
 <a href="/docs/">API Docs</a>
 
-[GitHub](https://github.com/evillt/vercel-toast)
+[GitHub](https://github.com/2nthony/vercel-toast)
 
 ## Examples
 

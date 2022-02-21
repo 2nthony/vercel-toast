@@ -2,10 +2,9 @@
 
 > Framework-agnostic vercel design's toast component
 
-[![NPM version](https://badgen.net/npm/v/vercel-toast)](https://npmjs.com/package/vercel-toast)
-[![NPM download](https://badgen.net/npm/dm/vercel-toast)](https://npmjs.com/package/vercel-toast)
-[![License](https://badgen.net/npm/license/vercel-toast)](./LICENSE)
-[![buy me coffee](https://badgen.net/badge/buy%20me/coffee/f2a)](https://2nthony.notion.site/Buy-2nthony-Coffee-d67a508cd58e4896bfb50c7112f93f51)
+[![NPM version](https://badgen.net/npm/v/vercel-toast?label=)](https://npmjs.com/package/vercel-toast)
+[![License](https://badgen.net/npm/license/vercel-toast?label=)](./LICENSE)
+[![NPM download](https://badgen.net/npm/dm/vercel-toast?label=)](https://npmjs.com/package/vercel-toast)
 
 ![](media/toast2.gif)
 
@@ -17,7 +16,7 @@ yarn add vercel-toast
 
 ## Documentation
 
-https://vercel-toast.evila.me
+https://vercel-toast.vercel.app
 
 ## Credits
 
@@ -37,8 +36,8 @@ https://vercel-toast.evila.me
 
 ## Author
 
-**toast** © [evillt](https://github.com/evillt), Released under the [MIT](./LICENSE) License.
+**vercel-toast** © [2nthony](https://github.com/2nthony), Released under the [MIT](./LICENSE) License.
 
-Authored and maintained by **EVILLT** with help from contributors ([list](https://github.com/evillt/vercel-toast/contributors)).
+Authored and maintained by **2nthony** with help from contributors ([list](https://github.com/evillt/vercel-toast/contributors)).
 
-> [evila.me](https://evila.me) · GitHub [@evillt](https://github.com/evillt) · Twitter [@evillt](https://twitter.com/evillt)
+> GitHub [@2nthony](https://github.com/2nthony) · Twitter [@_2nthony](https://twitter.com/_2nthony)
