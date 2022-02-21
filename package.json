@@ -35,7 +35,7 @@
     "husky": "3.1.0",
     "lint-staged": "9.5.0",
     "poi": "12.10.3",
-    "postcss": "7.0.39",
+    "postcss": "8.2.13",
     "postcss-preset-env": "6.7.0",
     "prettier": "1.19.1",
     "saika": "2.13.7",
