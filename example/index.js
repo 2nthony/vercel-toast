@@ -12,7 +12,7 @@ new Saika({
   nav: [
     {
       title: 'GitHub',
-      link: 'https://github.com/evillt/vercel-toast',
+      link: 'https://github.com/2nthony/vercel-toast',
     },
   ],
   router: {
@@ -21,7 +21,7 @@ new Saika({
 
   plugins: [
     ghCorner({
-      repo: 'evillt/vercel-toast',
+      repo: '2nthony/vercel-toast',
       pinned: true,
     }),
   ],
@@ -29,6 +29,6 @@ new Saika({
   codeBlockButtons: [copyCode],
 
   footer: `© {{ new Date().getFullYear() }} Made with <font color="#f04">❤</font> by
-  <a href="https://github.com/evillt">EVILLT</a>.
+  <a href="https://github.com/2nthony">2nthony</a>.
   Powered by <a href="https://saika.dev">Saika</a>.`,
 })

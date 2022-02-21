@@ -5,9 +5,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "evillt/vercel-toast"
+    "url": "2nthony/vercel-toast"
   },
-  "author": "evillt <ijoec123@gmail.com> (https://evila.me)",
+  "author": "2nthony <ijoec123@gmail.com> (https://github.com/2nthony)",
   "main": "dist/vercel-toast.min.js",
   "module": "dist/vercel-toast.esm.js",
   "types": "dist/index.d.ts",
