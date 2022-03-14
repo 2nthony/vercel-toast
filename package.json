@@ -32,7 +32,7 @@
     "@saika/github-corner": "0.1.1",
     "dts-bundle-generator": "5.9.0",
     "esbuild": "0.14.26",
-    "husky": "3.1.0",
+    "husky": "7.0.4",
     "lint-staged": "9.5.0",
     "poi": "12.10.3",
     "postcss": "7.0.39",
