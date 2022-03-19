@@ -38,6 +38,6 @@ https://vercel-toast.vercel.app
 
 **vercel-toast** © [2nthony](https://github.com/2nthony), Released under the [MIT](./LICENSE) License.
 
-Authored and maintained by **2nthony** with help from contributors ([list](https://github.com/evillt/vercel-toast/contributors)).
+Authored and maintained by **2nthony** with help from contributors ([list](https://github.com/2nthony/vercel-toast/contributors)).
 
-> GitHub [@2nthony](https://github.com/2nthony) · Twitter [@_2nthony](https://twitter.com/_2nthony)
+> GitHub [@2nthony](https://github.com/2nthony) · Twitter [@\_2nthony](https://twitter.com/_2nthony)
