@@ -30,5 +30,5 @@ new Saika({
 
   footer: `© {{ new Date().getFullYear() }} Made with <font color="#f04">❤</font> by
   <a href="https://github.com/2nthony">2nthony</a>.
-  Powered by <a href="https://saika.dev">Saika</a>.`,
+  Powered by <a href="https://saika.vercel.app">Saika</a>.`,
 })
