@@ -8,7 +8,7 @@ specifiers:
   postcss: ^8.4.14
   postcss-preset-env: ^7.7.2
   prettier: ^2.7.1
-  saika: 2.13.7
+  saika: 2.13.10
   saika-code-block-buttons: 1.0.1
   tsup: ^6.2.1
   typedoc: 0.15.8
@@ -26,7 +26,7 @@ devDependencies:
   postcss: 8.4.14
   postcss-preset-env: 7.7.2_postcss@8.4.14
   prettier: 2.7.1
-  saika: 2.13.7
+  saika: 2.13.10
   saika-code-block-buttons: 1.0.1
   tsup: 6.2.1_uhxntc4vyfwq7q2yb2uxbz7yha
   typedoc: 0.15.8
@@ -2242,8 +2242,8 @@ packages:
       feather-icons: 4.29.0
     dev: true
 
-  /saika/2.13.7:
-    resolution: {integrity: sha512-ng6DecPTS7+GiU/piesUhJWQag/zSH7thI9IpsCtayihR3QTMzAZoSTs9di+EyzsEodFUK8Kqoa+AkWi4uGScw==}
+  /saika/2.13.10:
+    resolution: {integrity: sha512-Y/fDt00agaxiEu2LkFgBaUPcohMokuYnd9GVseokhOVU8VVfoj8B5hC/fOIcWKFVitGxyBF0uF8sc1QYtVwKtg==}
     dependencies:
       jump.js: 1.0.2
       loadjs: 3.6.1
