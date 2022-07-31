@@ -9,7 +9,8 @@ npm install vercel-toast
 ```
 
 ```js
-import "vercel-toast/dist/vercel-toast.css";
+import "vercel-toast/css";
+// import "vercel-toast/dist/vercel-toast.css";
 import { createToast } from "vercel-toast";
 
 createToast("The Evil Rabbit jumped over the fence.");
