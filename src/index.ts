@@ -1,152 +1,155 @@
-const waitFor = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+import "./style.css";
 
-let instances: Set<Toast> = new Set()
-let container: HTMLDivElement
+const waitFor = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));
+
+let instances: Set<Toast> = new Set();
+let container: HTMLDivElement;
 
 export interface Action {
-  text: string
-  callback?: ActionCallback
+  text: string;
+  callback?: ActionCallback;
 }
 
-export type Message = string | HTMLElement
+export type Message = string | HTMLElement;
 
-export type ActionCallback = (toast: Toast) => void
+export type ActionCallback = (toast: Toast) => void;
 
 export interface ToastOptions {
   /**
    * Automatically destroy the toast in specific timeout (ms)
    * @default `0` which means would not automatically destroy the toast
    */
-  timeout?: number
+  timeout?: number;
   /**
    * Toast type
    * @default `default`
    */
-  type?: 'success' | 'error' | 'warning' | 'dark' | 'default'
-  action?: Action
-  cancel?: string
+  type?: "success" | "error" | "warning" | "dark" | "default";
+  action?: Action;
+  cancel?: string;
 }
 
 export class Toast {
-  message: Message
-  options: ToastOptions
-  el?: HTMLDivElement
+  message: Message;
+  options: ToastOptions;
+  el?: HTMLDivElement;
 
-  private timeoutId?: number
+  private timeoutId?: number;
 
   constructor(message: Message, options: ToastOptions = {}) {
-    const { timeout = 0, action, type = 'default', cancel } = options
+    const { timeout = 0, action, type = "default", cancel } = options;
 
-    this.message = message
+    this.message = message;
     this.options = {
       timeout,
       action,
       type,
       cancel,
-    }
+    };
 
-    this.setContainer()
+    this.setContainer();
 
-    this.insert()
-    instances.add(this)
+    this.insert();
+    instances.add(this);
   }
 
   insert(): void {
-    const el = document.createElement('div')
-    el.className = 'toast'
-    el.setAttribute('aria-live', 'assertive')
-    el.setAttribute('aria-atomic', 'true')
-    el.setAttribute('aria-hidden', 'false')
+    const el = document.createElement("div");
+    el.className = "toast";
+    el.setAttribute("aria-live", "assertive");
+    el.setAttribute("aria-atomic", "true");
+    el.setAttribute("aria-hidden", "false");
 
-    const { action, type, cancel } = this.options
+    const { action, type, cancel } = this.options;
 
-    const inner = document.createElement('div')
-    inner.className = 'toast-inner'
+    const inner = document.createElement("div");
+    inner.className = "toast-inner";
 
-    const text = document.createElement('div')
-    text.className = 'toast-text'
-    inner.classList.add(type as string)
+    const text = document.createElement("div");
+    text.className = "toast-text";
+    inner.classList.add(type as string);
 
-    if (typeof this.message === 'string') {
-      text.textContent = this.message
+    if (typeof this.message === "string") {
+      text.textContent = this.message;
     } else {
-      text.appendChild(this.message)
+      text.appendChild(this.message);
     }
 
-    inner.appendChild(text)
+    inner.appendChild(text);
 
     if (cancel) {
-      const button = document.createElement('button')
-      button.className = 'toast-button cancel-button'
-      button.textContent = cancel
-      button.type = 'text'
-      button.onclick = () => this.destroy()
-      inner.appendChild(button)
+      const button = document.createElement("button");
+      button.className = "toast-button cancel-button";
+      button.textContent = cancel;
+      button.type = "text";
+      button.onclick = () => this.destroy();
+      inner.appendChild(button);
     }
 
     if (action) {
-      const button = document.createElement('button')
-      button.className = 'toast-button'
-      button.textContent = action.text
-      button.type = 'text'
+      const button = document.createElement("button");
+      button.className = "toast-button";
+      button.textContent = action.text;
+      button.type = "text";
       button.onclick = () => {
-        this.stopTimer()
+        this.stopTimer();
         if (action.callback) {
-          action.callback(this)
+          action.callback(this);
         } else {
-          this.destroy()
+          this.destroy();
         }
-      }
-      inner.appendChild(button)
+      };
+      inner.appendChild(button);
     }
 
-    el.appendChild(inner)
+    el.appendChild(inner);
 
-    this.startTimer()
+    this.startTimer();
 
-    this.el = el
+    this.el = el;
 
-    container.appendChild(el)
+    container.appendChild(el);
 
     // Delay to set slide-up transition
-    waitFor(50).then(sortToast)
+    waitFor(50).then(sortToast);
   }
 
   destroy(): void {
-    const { el } = this
-    if (!el) return
+    const { el } = this;
+    if (!el) return;
 
-    this.stopTimer()
-    container.removeChild(el)
-    instances.delete(this)
+    this.stopTimer();
+    container.removeChild(el);
+    instances.delete(this);
 
-    sortToast()
+    sortToast();
   }
   /**
    * @deprecated Please use `destroy`
    */
   destory(): void {
-    typoWarning('destory')
-    this.destroy()
+    typoWarning("destory");
+    this.destroy();
   }
 
   setContainer(): void {
-    container = document.querySelector('.toast-container') as HTMLDivElement
+    container = document.querySelector(".toast-container") as HTMLDivElement;
     if (!container) {
-      container = document.createElement('div')
-      container.className = 'toast-container'
-      document.body.appendChild(container)
+      container = document.createElement("div");
+      container.className = "toast-container";
+      document.body.appendChild(container);
     }
 
     // Stop all instance timer when mouse enter
-    container.addEventListener('mouseenter', () => {
-      instances.forEach(instance => instance.stopTimer())
-    })
+    container.addEventListener("mouseenter", () => {
+      instances.forEach((instance) => instance.stopTimer());
+    });
 
     // Restart all instance timer when mouse leave
-    container.addEventListener('mouseleave', () => {
-      instances.forEach(instance => instance.startTimer())
-    })
+    container.addEventListener("mouseleave", () => {
+      instances.forEach((instance) => instance.startTimer());
+    });
   }
 
   startTimer(): void {
@@ -154,74 +157,72 @@ export class Toast {
       this.timeoutId = self.setTimeout(
         () => this.destroy(),
         this.options.timeout,
-      )
+      );
     }
   }
 
   stopTimer(): void {
     if (this.timeoutId) {
-      clearTimeout(this.timeoutId)
-      this.timeoutId = undefined
+      clearTimeout(this.timeoutId);
+      this.timeoutId = undefined;
     }
   }
 }
 
 export function createToast(message: Message, options?: ToastOptions): Toast {
-  return new Toast(message, options)
+  return new Toast(message, options);
 }
 
 export function destroyAllToasts(): void {
-  if (!container) return
+  if (!container) return;
 
-  instances.forEach(instance => {
-    instance.destroy()
-  })
+  instances.forEach((instance) => {
+    instance.destroy();
+  });
 }
 /**
  * @deprecated Please use `destroyAllToasts`
  */
 export function destoryAllToasts(): void {
-  typoWarning('destoryAllToasts')
-  destroyAllToasts()
+  typoWarning("destoryAllToasts");
+  destroyAllToasts();
 }
 
 function sortToast(): void {
-  const toasts = Array.from(instances)
-    .reverse()
-    .slice(0, 4)
+  const toasts = Array.from(instances).reverse().slice(0, 4);
 
-  const heights: Array<number> = []
+  const heights: Array<number> = [];
 
   toasts.forEach((toast, index) => {
-    const sortIndex = index + 1
-    const el = toast.el as HTMLDivElement
-    const height = +(el.getAttribute('data-height') || 0) || el.clientHeight
+    const sortIndex = index + 1;
+    const el = toast.el as HTMLDivElement;
+    const height = +(el.getAttribute("data-height") || 0) || el.clientHeight;
 
-    heights.push(height)
+    heights.push(height);
 
-    el.className = `toast toast-${sortIndex}`
-    el.dataset.height = '' + height
-    el.style.setProperty('--index', '' + sortIndex)
-    el.style.setProperty('--height', height + 'px')
-    el.style.setProperty('--front-height', `${heights[0]}px`)
+    el.className = `toast toast-${sortIndex}`;
+    el.dataset.height = "" + height;
+    el.style.setProperty("--index", "" + sortIndex);
+    el.style.setProperty("--height", height + "px");
+    el.style.setProperty("--front-height", `${heights[0]}px`);
 
     if (sortIndex > 1) {
       const hoverOffsetY = heights
         .slice(0, sortIndex - 1)
-        .reduce((res, next) => (res += next), 0)
-      el.style.setProperty('--hover-offset-y', `-${hoverOffsetY}px`)
+        .reduce((res, next) => (res += next), 0);
+      el.style.setProperty("--hover-offset-y", `-${hoverOffsetY}px`);
     } else {
-      el.style.removeProperty('--hover-offset-y')
+      el.style.removeProperty("--hover-offset-y");
     }
-  })
+  });
 }
 
 function typoWarning(method: string) {
   console.warn(
-    '[vercel-toast]:',
+    "[vercel-toast]:",
     `\`${method}\` is a typo function, please use \`${method.replace(
-      'or',
-      'ro',
+      "or",
+      "ro",
     )}\``,
-  )
+  );
 }
