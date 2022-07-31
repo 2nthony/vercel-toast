@@ -5,7 +5,7 @@ Framework-agnostic vercel design's toast component (≈1KB Gzipped).
 ## Use via bundler
 
 ```bash
-npm install vercel-toast
+npm i vercel-toast
 ```
 
 ```js
