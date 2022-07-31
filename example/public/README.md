@@ -9,10 +9,10 @@ npm install vercel-toast
 ```
 
 ```js
-import 'vercel-toast/dist/vercel-toast.css'
-import { createToast } from 'vercel-toast'
+import "vercel-toast/dist/vercel-toast.css";
+import { createToast } from "vercel-toast";
 
-createToast('The Evil Rabbit jumped over the fence.')
+createToast("The Evil Rabbit jumped over the fence.");
 ```
 
 ## Use via CDN
@@ -26,7 +26,7 @@ createToast('The Evil Rabbit jumped over the fence.')
 <script src="https://unpkg.com/vercel-toast"></script>
 
 <script>
-  toast.createToast('The Evil Rabbit jumped over the fence.')
+  toast.createToast("The Evil Rabbit jumped over the fence.");
 </script>
 ```
 
@@ -41,9 +41,9 @@ createToast('The Evil Rabbit jumped over the fence.')
 ### Destroy all toasts
 
 ```js
-import { destroyAllToasts } from 'vercel-toast'
+import { destroyAllToasts } from "vercel-toast";
 
-destroyAllToasts()
+destroyAllToasts();
 ```
 
 <button @click="destroyAllToasts">Destroy all toast</button>
@@ -51,11 +51,11 @@ destroyAllToasts()
 ### Default
 
 ```js
-import { createToast } from 'vercel-toast'
+import { createToast } from "vercel-toast";
 
-createToast('The Evil Rabbit jumped over the fence.', {
+createToast("The Evil Rabbit jumped over the fence.", {
   timeout: 3000, // in 3 seconds
-})
+});
 ```
 
 <button @click="showDefault">Show Toast</button>
@@ -63,14 +63,14 @@ createToast('The Evil Rabbit jumped over the fence.', {
 ### Multiline
 
 ```js
-import { createToast } from 'vercel-toast'
+import { createToast } from "vercel-toast";
 
 createToast(
-  'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.',
+  "The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence.",
   {
     timeout: 3000,
   },
-)
+);
 ```
 
 <button @click="multiline">Show Toast</button>
@@ -78,12 +78,12 @@ createToast(
 ### Use a DOM node as message
 
 ```js
-const message = document.createElement('div')
-message.innerHTML = `<i style="color:magenta;">The Evil Rabbit jumped over the fence.</i>`
+const message = document.createElement("div");
+message.innerHTML = `<i style="color:magenta;">The Evil Rabbit jumped over the fence.</i>`;
 
 createToast(message, {
   timeout: 3000,
-})
+});
 ```
 
 <button @click="domNode">Show Toast</button>
@@ -91,16 +91,16 @@ createToast(message, {
 ### Action
 
 ```js
-import { createToast } from 'vercel-toast'
+import { createToast } from "vercel-toast";
 
-createToast('The Evil Rabbit jumped over the fence.', {
+createToast("The Evil Rabbit jumped over the fence.", {
   action: {
-    text: 'Undo',
+    text: "Undo",
     callback(toast) {
-      toast.destroy()
+      toast.destroy();
     },
   },
-})
+});
 ```
 
 <button @click="action">Show Toast</button>
@@ -108,20 +108,20 @@ createToast('The Evil Rabbit jumped over the fence.', {
 ### Action + Cancel
 
 ```js
-import { createToast } from 'vercel-toast'
+import { createToast } from "vercel-toast";
 
 createToast(
-  'The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence again.',
+  "The Evil Rabbit jumped over the fence. The Evil Rabbit jumped over the fence again.",
   {
     action: {
-      text: 'Undo',
+      text: "Undo",
       callback(toast) {
-        toast.destroy()
+        toast.destroy();
       },
     },
-    cancel: 'Cancel',
+    cancel: "Cancel",
   },
-)
+);
 ```
 
 <button @click="actionAndCancel">Show Toast</button>
@@ -129,27 +129,27 @@ createToast(
 ### With types
 
 ```js
-import { createToast } from 'vercel-toast'
+import { createToast } from "vercel-toast";
 
-createToast('The Evil Rabbit jumped over the fence.', {
+createToast("The Evil Rabbit jumped over the fence.", {
   timeout: 3000,
-  type: 'success',
-})
+  type: "success",
+});
 
-createToast('The Evil Rabbit jumped over the fence.', {
+createToast("The Evil Rabbit jumped over the fence.", {
   timeout: 3000,
-  type: 'warning',
-})
+  type: "warning",
+});
 
-createToast('The Evil Rabbit jumped over the fence.', {
+createToast("The Evil Rabbit jumped over the fence.", {
   timeout: 3000,
-  type: 'error',
-})
+  type: "error",
+});
 
-createToast('The Evil Rabbit jumped over the fence.', {
+createToast("The Evil Rabbit jumped over the fence.", {
   timeout: 3000,
-  type: 'dark',
-})
+  type: "dark",
+});
 ```
 
 <button @click="withType('success')">Show Success</button>
