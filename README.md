@@ -1,17 +1,24 @@
 # vercel-toast
 
-> Framework-agnostic vercel design's toast component
+[![NPM version](https://badgen.net/npm/v/vercel-toast?label=&color=29BC9B)](https://npmjs.com/package/vercel-toast)
+[![NPM download](https://badgen.net/npm/dm/vercel-toast?label=&color=29BC9B)](https://npmjs.com/package/vercel-toast)
 
-[![NPM version](https://badgen.net/npm/v/vercel-toast?label=)](https://npmjs.com/package/vercel-toast)
-[![License](https://badgen.net/npm/license/vercel-toast?label=)](./LICENSE)
-[![NPM download](https://badgen.net/npm/dm/vercel-toast?label=)](https://npmjs.com/package/vercel-toast)
+Framework-agnostic vercel design's toast component
 
 ![](media/toast2.gif)
 
-## Install
+## Usage
 
 ```console
-yarn add vercel-toast
+npm i vercel-toast
+```
+
+```ts
+// in js file
+import "vercel-toast/css";
+import { createToast } from "vercel-toast";
+
+createToast("Hi from vercel toast!");
 ```
 
 ## Documentation
@@ -34,10 +41,6 @@ https://vercel-toast.vercel.app
 
 [![sponsors](https://cdn.jsdelivr.net/gh/2nthony/sponsors-image/sponsors.svg)](https://github.com/sponsors/2nthony)
 
-## Author
+## License
 
-**vercel-toast** © [2nthony](https://github.com/2nthony), Released under the [MIT](./LICENSE) License.
-
-Authored and maintained by **2nthony** with help from contributors ([list](https://github.com/2nthony/vercel-toast/contributors)).
-
-> GitHub [@2nthony](https://github.com/2nthony) · Twitter [@\_2nthony](https://twitter.com/_2nthony)
+MIT &copy; [2nthony](https://github.com/sponsors/2nthony)
