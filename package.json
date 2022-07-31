@@ -30,10 +30,11 @@
     "build": "tsup --entry.vercel-toast src/index.ts --dts --format esm,cjs",
     "docs": "typedoc src/index.ts --out example/public/docs --mode file --readme none --theme minimal --excludeNotExported",
     "build:docs": "npm run docs && npm run example:build",
+    "format": "prettier . --write",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@2nthony/prettier-config": "1.0.0",
+    "@2nthony/prettier-config": "1.0.1",
     "@saika/github-corner": "0.1.1",
     "husky": "3.1.0",
     "lint-staged": "9.5.0",
