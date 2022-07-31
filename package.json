@@ -31,7 +31,7 @@
     "@poi/plugin-typescript": "12.3.1",
     "@saika/github-corner": "0.1.1",
     "dts-bundle-generator": "5.9.0",
-    "esbuild": "0.14.26",
+    "esbuild": "0.14.51",
     "husky": "3.1.0",
     "lint-staged": "9.5.0",
     "poi": "12.10.3",
