@@ -1,4 +1,7 @@
-const waitFor = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
+import './style.css'
+
+const waitFor = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms))
 
 let instances: Set<Toast> = new Set()
 let container: HTMLDivElement
@@ -140,12 +143,12 @@ export class Toast {
 
     // Stop all instance timer when mouse enter
     container.addEventListener('mouseenter', () => {
-      instances.forEach(instance => instance.stopTimer())
+      instances.forEach((instance) => instance.stopTimer())
     })
 
     // Restart all instance timer when mouse leave
     container.addEventListener('mouseleave', () => {
-      instances.forEach(instance => instance.startTimer())
+      instances.forEach((instance) => instance.startTimer())
     })
   }
 
@@ -173,7 +176,7 @@ export function createToast(message: Message, options?: ToastOptions): Toast {
 export function destroyAllToasts(): void {
   if (!container) return
 
-  instances.forEach(instance => {
+  instances.forEach((instance) => {
     instance.destroy()
   })
 }
@@ -186,9 +189,7 @@ export function destoryAllToasts(): void {
 }
 
 function sortToast(): void {
-  const toasts = Array.from(instances)
-    .reverse()
-    .slice(0, 4)
+  const toasts = Array.from(instances).reverse().slice(0, 4)
 
   const heights: Array<number> = []
 
