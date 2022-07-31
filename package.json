@@ -7,42 +7,45 @@
     "type": "git",
     "url": "2nthony/vercel-toast"
   },
-  "author": "2nthony <ijoec123@gmail.com> (https://github.com/2nthony)",
-  "main": "dist/vercel-toast.min.js",
-  "module": "dist/vercel-toast.esm.js",
+  "funding": "https://github.com/sponsors/2nthony",
+  "author": "2nthony <ant.hu@outlook.com> (https://github.com/2nthony)",
+  "main": "dist/vercel-toast.js",
+  "module": "dist/vercel-toast.mjs",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "dist/vercel-toast.mjs",
+      "require": "dist/vercel-toast.js",
+      "types": "dist/index.d.ts"
+    },
+    "./css": "dist/vercel-toast.css"
+  },
   "files": [
-    "dist/*.ts",
-    "dist/*.js",
-    "dist/*.css"
+    "dist"
   ],
   "scripts": {
     "test": "echo lol",
-    "example": "poi --serve --config example/poi.config.js",
-    "example:build": "poi --prod --config example/poi.config.js",
-    "build": "node scripts/build.js && npm run gen-dts --scripts-prepend-node-path",
-    "gen-dts": "dts-bundle-generator src/index.ts -o dist/index.d.ts",
+    "example": "vite",
+    "example:build": "vite build",
+    "build": "tsup --entry.vercel-toast src/index.ts --dts --format esm,cjs",
     "docs": "typedoc src/index.ts --out example/public/docs --mode file --readme none --theme minimal --excludeNotExported",
     "build:docs": "npm run docs && npm run example:build",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@2nthony/prettier-config": "1.0.0",
-    "@poi/plugin-typescript": "12.3.1",
     "@saika/github-corner": "0.1.1",
-    "dts-bundle-generator": "5.9.0",
-    "esbuild": "0.14.26",
     "husky": "3.1.0",
     "lint-staged": "9.5.0",
-    "poi": "12.10.3",
-    "postcss": "7.0.39",
-    "postcss-preset-env": "6.7.0",
-    "prettier": "1.19.1",
+    "postcss": "^8.4.14",
+    "postcss-preset-env": "^7.7.2",
+    "prettier": "^2.7.1",
     "saika": "2.13.7",
     "saika-code-block-buttons": "1.0.1",
-    "semantic-release": "17.4.7",
+    "tsup": "^6.2.1",
     "typedoc": "0.15.8",
     "typescript": "4.5.3",
+    "vite": "^3.0.4",
     "vue": "2.6.14",
     "vue-template-compiler": "2.6.14",
     "vuedown": "3.2.0"
