@@ -11,12 +11,12 @@
   "author": "2nthony <ant.hu@outlook.com> (https://github.com/2nthony)",
   "main": "dist/vercel-toast.js",
   "module": "dist/vercel-toast.mjs",
-  "types": "dist/index.d.ts",
+  "types": "dist/vercel-toast.d.ts",
   "exports": {
     ".": {
       "import": "dist/vercel-toast.mjs",
       "require": "dist/vercel-toast.js",
-      "types": "dist/index.d.ts"
+      "types": "dist/vercel-toast.d.ts"
     },
     "./css": "dist/vercel-toast.css"
   },
