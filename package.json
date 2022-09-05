@@ -18,7 +18,8 @@
       "require": "dist/vercel-toast.js",
       "types": "dist/vercel-toast.d.ts"
     },
-    "./css": "dist/vercel-toast.css"
+    "./css": "dist/vercel-toast.css",
+    "./*": "./*"
   },
   "files": [
     "dist"
