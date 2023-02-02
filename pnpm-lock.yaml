@@ -14,8 +14,8 @@ specifiers:
   typedoc: 0.15.8
   typescript: 4.7.4
   vite: 3.0.9
-  vue: 2.7.13
-  vue-template-compiler: 2.7.13
+  vue: 2.7.14
+  vue-template-compiler: 2.7.14
   vuedown: 3.2.0
 
 devDependencies:
@@ -32,8 +32,8 @@ devDependencies:
   typedoc: 0.15.8
   typescript: 4.7.4
   vite: 3.0.9
-  vue: 2.7.13
-  vue-template-compiler: 2.7.13
+  vue: 2.7.14
+  vue-template-compiler: 2.7.14
   vuedown: 3.2.0
 
 packages:
@@ -319,8 +319,8 @@ packages:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
     dev: true
 
-  /@vue/compiler-sfc/2.7.13:
-    resolution: {integrity: sha512-zzu2rLRZlgIU+OT3Atbr7Y6PG+LW4wVQpPfNRrGDH3dM9PsrcVfa+1pKb8bW467bGM3aDOvAnsYLWVpYIv3GRg==}
+  /@vue/compiler-sfc/2.7.14:
+    resolution: {integrity: sha512-aNmNHyLPsw+sVvlQFQ2/8sjNuLtK54TC6cuKnVzAY93ks4ZBrvwQSnkkIh7bsbNhum5hJBS00wSDipQ937f5DA==}
     dependencies:
       '@babel/parser': 7.19.6
       postcss: 8.4.21
@@ -2523,9 +2523,9 @@ packages:
       loadjs: 3.6.1
       medium-zoom: 1.0.6
       prismjs: 1.28.0
-      vue: 2.7.13
-      vue-router: 3.5.4_vue@2.7.13
-      vuex: 3.6.2_vue@2.7.13
+      vue: 2.7.14
+      vue-router: 3.5.4_vue@2.7.14
+      vuex: 3.6.2_vue@2.7.14
     dev: true
 
   /semver-compare/1.0.0:
@@ -2910,25 +2910,25 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vue-router/3.5.4_vue@2.7.13:
+  /vue-router/3.5.4_vue@2.7.14:
     resolution: {integrity: sha512-x+/DLAJZv2mcQ7glH2oV9ze8uPwcI+H+GgTgTmb5I55bCgY3+vXWIsqbYUzbBSZnwFHEJku4eoaH/x98veyymQ==}
     peerDependencies:
       vue: ^2
     dependencies:
-      vue: 2.7.13
+      vue: 2.7.14
     dev: true
 
-  /vue-template-compiler/2.7.13:
-    resolution: {integrity: sha512-jYM6TClwDS9YqP48gYrtAtaOhRKkbYmbzE+Q51gX5YDr777n7tNI/IZk4QV4l/PjQPNh/FVa/E92sh/RqKMrog==}
+  /vue-template-compiler/2.7.14:
+    resolution: {integrity: sha512-zyA5Y3ArvVG0NacJDkkzJuPQDF8RFeRlzV2vLeSnhSpieO6LK2OVbdLPi5MPPs09Ii+gMO8nY4S3iKQxBxDmWQ==}
     dependencies:
       de-indent: 1.0.2
       he: 1.2.0
     dev: true
 
-  /vue/2.7.13:
-    resolution: {integrity: sha512-QnM6ULTNnPmn71eUO+4hdjfBIA3H0GLsBnchnI/kS678tjI45GOUZhXd0oP/gX9isikXz1PAzSnkPspp9EUNfQ==}
+  /vue/2.7.14:
+    resolution: {integrity: sha512-b2qkFyOM0kwqWFuQmgd4o+uHGU7T+2z3T+WQp8UBjADfEv2n4FEMffzBmCKNP0IGzOEEfYjvtcC62xaSKeQDrQ==}
     dependencies:
-      '@vue/compiler-sfc': 2.7.13
+      '@vue/compiler-sfc': 2.7.14
       csstype: 3.1.1
     dev: true
 
@@ -2936,12 +2936,12 @@ packages:
     resolution: {integrity: sha512-60RPYp+0YI4VCad1cByUHOAMrkT5Ce7nT4s1cFbAEPMQPnu8C6KLvEe4ISg9UveeS7XXGAbJZT0nJTvW09yxRQ==}
     dev: true
 
-  /vuex/3.6.2_vue@2.7.13:
+  /vuex/3.6.2_vue@2.7.14:
     resolution: {integrity: sha512-ETW44IqCgBpVomy520DT5jf8n0zoCac+sxWnn+hMe/CzaSejb/eVw2YToiXYX+Ex/AuHHia28vWTq4goAexFbw==}
     peerDependencies:
       vue: ^2.0.0
     dependencies:
-      vue: 2.7.13
+      vue: 2.7.14
     dev: true
 
   /webidl-conversions/4.0.2:
