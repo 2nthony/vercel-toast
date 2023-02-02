@@ -12,7 +12,7 @@ specifiers:
   saika-code-block-buttons: 1.0.1
   tsup: 6.5.0
   typedoc: 0.15.8
-  typescript: 4.7.4
+  typescript: 4.9.5
   vite: 3.0.9
   vue: 2.7.14
   vue-template-compiler: 2.7.14
@@ -28,9 +28,9 @@ devDependencies:
   prettier: 2.8.3
   saika: 2.13.10
   saika-code-block-buttons: 1.0.1
-  tsup: 6.5.0_a2jjuwtpe5wwe66qqyuhpvyeky
+  tsup: 6.5.0_uujdqti2krmttzhqvubwnsmcci
   typedoc: 0.15.8
-  typescript: 4.7.4
+  typescript: 4.9.5
   vite: 3.0.9
   vue: 2.7.14
   vue-template-compiler: 2.7.14
@@ -2770,7 +2770,7 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tsup/6.5.0_a2jjuwtpe5wwe66qqyuhpvyeky:
+  /tsup/6.5.0_uujdqti2krmttzhqvubwnsmcci:
     resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==}
     engines: {node: '>=14'}
     hasBin: true
@@ -2801,7 +2801,7 @@ packages:
       source-map: 0.8.0-beta.0
       sucrase: 3.24.0
       tree-kill: 1.2.2
-      typescript: 4.7.4
+      typescript: 4.9.5
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -2846,8 +2846,8 @@ packages:
     hasBin: true
     dev: true
 
-  /typescript/4.7.4:
-    resolution: {integrity: sha512-C0WQT0gezHuw6AdY1M2jxUO83Rjf0HP7Sk1DtXj6j1EwkQNZrHAg2XPWlq62oqEhYvONq5pkC2Y9oPljWToLmQ==}
+  /typescript/4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
