@@ -7,7 +7,7 @@ specifiers:
   lint-staged: 9.5.0
   postcss: 8.4.21
   postcss-preset-env: 7.8.3
-  prettier: 2.7.1
+  prettier: 2.8.3
   saika: 2.13.10
   saika-code-block-buttons: 1.0.1
   tsup: 6.2.2
@@ -25,7 +25,7 @@ devDependencies:
   lint-staged: 9.5.0
   postcss: 8.4.21
   postcss-preset-env: 7.8.3_postcss@8.4.21
-  prettier: 2.7.1
+  prettier: 2.8.3
   saika: 2.13.10
   saika-code-block-buttons: 1.0.1
   tsup: 6.2.2_a2jjuwtpe5wwe66qqyuhpvyeky
@@ -2387,8 +2387,8 @@ packages:
       source-map-js: 1.0.2
     dev: true
 
-  /prettier/2.7.1:
-    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+  /prettier/2.8.3:
+    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
