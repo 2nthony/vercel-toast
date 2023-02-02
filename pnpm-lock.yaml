@@ -10,7 +10,7 @@ specifiers:
   prettier: 2.8.3
   saika: 2.13.10
   saika-code-block-buttons: 1.0.1
-  tsup: 6.2.2
+  tsup: 6.5.0
   typedoc: 0.15.8
   typescript: 4.7.4
   vite: 3.0.9
@@ -28,7 +28,7 @@ devDependencies:
   prettier: 2.8.3
   saika: 2.13.10
   saika-code-block-buttons: 1.0.1
-  tsup: 6.2.2_a2jjuwtpe5wwe66qqyuhpvyeky
+  tsup: 6.5.0_a2jjuwtpe5wwe66qqyuhpvyeky
   typedoc: 0.15.8
   typescript: 4.7.4
   vite: 3.0.9
@@ -456,8 +456,8 @@ packages:
       update-browserslist-db: 1.0.10_browserslist@4.21.5
     dev: true
 
-  /bundle-require/3.0.4_esbuild@0.15.5:
-    resolution: {integrity: sha512-VXG6epB1yrLAvWVQpl92qF347/UXmncQj7J3U8kZEbdVZ1ZkQyr4hYeL/9RvcE8vVVdp53dY78Fd/3pqfRqI1A==}
+  /bundle-require/3.1.2_esbuild@0.15.5:
+    resolution: {integrity: sha512-Of6l6JBAxiyQ5axFxUM6dYeP/W7X2Sozeo/4EYB9sJhL+dqL7TKjg+shwxp6jlu/6ZSERfsYtIpSJ1/x3XkAEA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
       esbuild: '>=0.13'
@@ -2490,6 +2490,14 @@ packages:
       fsevents: 2.3.2
     dev: true
 
+  /rollup/3.12.1:
+    resolution: {integrity: sha512-t9elERrz2i4UU9z7AwISj3CQcXP39cWxgRWLdf4Tm6aKm1eYrqHIgjzXBgb67GNY1sZckTFFi0oMozh3/S++Ig==}
+    engines: {node: '>=14.18.0', npm: '>=8.0.0'}
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    dev: true
+
   /run-node/1.0.0:
     resolution: {integrity: sha512-kc120TBlQ3mih1LSzdAJXo4xn/GWS2ec0l3S+syHDXP9uRr0JAT8Qd3mdMuyjqCzeZktgP3try92cEgf9Nks8A==}
     engines: {node: '>=4'}
@@ -2762,8 +2770,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tsup/6.2.2_a2jjuwtpe5wwe66qqyuhpvyeky:
-    resolution: {integrity: sha512-vJ9IAdif4GKAz2XMZzjX1hNqhBezJWXjm0qeQEoI7y//a64cxgCF8178eTMV4jBu7YNKnfAPpPSuyXW4mN+9rA==}
+  /tsup/6.5.0_a2jjuwtpe5wwe66qqyuhpvyeky:
+    resolution: {integrity: sha512-36u82r7rYqRHFkD15R20Cd4ercPkbYmuvRkz3Q1LCm5BsiFNUgpo36zbjVhCOgvjyxNBWNKHsaD5Rl8SykfzNA==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
@@ -2778,7 +2786,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      bundle-require: 3.0.4_esbuild@0.15.5
+      bundle-require: 3.1.2_esbuild@0.15.5
       cac: 6.7.12
       chokidar: 3.5.3
       debug: 4.3.4
@@ -2789,7 +2797,7 @@ packages:
       postcss: 8.4.21
       postcss-load-config: 3.1.4_postcss@8.4.21
       resolve-from: 5.0.0
-      rollup: 2.77.2
+      rollup: 3.12.1
       source-map: 0.8.0-beta.0
       sucrase: 3.24.0
       tree-kill: 1.2.2
