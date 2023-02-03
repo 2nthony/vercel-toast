@@ -23,8 +23,10 @@
     & .toast-inner {
       --toast-bg: none;
       --toast-fg: #fff;
+      --toast-border-color: #eaeaea;
       box-sizing: border-box;
       border-radius: var(--radius);
+      border: 1px solid var(--toast-border-color);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -42,20 +44,23 @@
 
       &.success {
         --toast-bg: #0076ff;
+        --toast-border-color: var(--toast-bg);
       }
 
       &.error {
-        --toast-bg: #f04;
+        --toast-bg: #e00;
+        --toast-border-color: var(--toast-bg);
       }
 
       &.warning {
         --toast-bg: #f5a623;
+        --toast-border-color: var(--toast-bg);
       }
 
       &.dark {
         --toast-bg: #000;
         --toast-fg: #fff;
-        box-shadow: 0 0 0 1px #333;
+        --toast-border-color: #333;
 
         & .toast-button {
           --button-fg: #000;
@@ -179,7 +184,7 @@
 
 /* if more than 1, then apply hover effect */
 .toast-container:has(.toast-2):hover {
-  bottom: calc(var(--safe-area-gap, 0px) + 25px);
+  bottom: calc(var(--safe-area-gap, 0px) + 30px);
 }
 
 .toast-container:hover .toast {
