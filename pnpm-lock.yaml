@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@2nthony/prettier-config': 1.0.2
-  '@saika/github-corner': 0.1.1
+  '@saika/github-corner': 0.1.3
   husky: 3.1.0
   lint-staged: 9.5.0
   postcss: 8.4.21
@@ -20,7 +20,7 @@ specifiers:
 
 devDependencies:
   '@2nthony/prettier-config': 1.0.2
-  '@saika/github-corner': 0.1.1
+  '@saika/github-corner': 0.1.3
   husky: 3.1.0
   lint-staged: 9.5.0
   postcss: 8.4.21
@@ -661,8 +661,8 @@ packages:
       fastq: 1.13.0
     dev: true
 
-  /@saika/github-corner/0.1.1:
-    resolution: {integrity: sha512-/rf4E1+w37wtTNSOFXE4QVRmCQiu67VaIhCDWgK4YGN4gHL5f3Ggi+LNhfnY1H7v2TREnMuQUzyB10gU3kClaA==}
+  /@saika/github-corner/0.1.3:
+    resolution: {integrity: sha512-pSjzJitVHPXjWDr7t0BKy0EI3wF29K3NBZWEQ8843Xj3B77H+O5J17xEEhcxH1825MPoOoaiPQWowc0mpmVVwA==}
     dev: true
 
   /@samverschueren/stream-to-observable/0.3.1_rxjs@6.6.7:
