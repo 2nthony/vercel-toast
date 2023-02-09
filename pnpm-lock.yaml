@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@2nthony/prettier-config': 1.0.1
+  '@2nthony/prettier-config': 1.0.2
   '@saika/github-corner': 0.1.1
   husky: 3.1.0
   lint-staged: 9.5.0
@@ -19,7 +19,7 @@ specifiers:
   vuedown: 3.2.0
 
 devDependencies:
-  '@2nthony/prettier-config': 1.0.1
+  '@2nthony/prettier-config': 1.0.2
   '@saika/github-corner': 0.1.1
   husky: 3.1.0
   lint-staged: 9.5.0
@@ -38,8 +38,8 @@ devDependencies:
 
 packages:
 
-  /@2nthony/prettier-config/1.0.1:
-    resolution: {integrity: sha512-GRIHMYFWAfmIGDt9A1LiwoVCd6UoB4WEhqzk7nU4t4VDiXPeO7WAoovkKw3YVEz94gMeo044yLuTiug4EIPFSA==}
+  /@2nthony/prettier-config/1.0.2:
+    resolution: {integrity: sha512-yqVfgzzJC2wZ8Fg9H/Smctv57ufKt2Z5QIADCHHMAyoSHZBvlEpKiTByYpwoTmjGhzwCE6d/TMk1hfsYDCc5Ew==}
     dev: true
 
   /@babel/code-frame/7.18.6:
