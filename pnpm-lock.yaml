@@ -10,7 +10,7 @@ specifiers:
   prettier: 2.8.4
   saika: 2.13.10
   saika-code-block-buttons: 1.0.1
-  tsup: 6.6.0
+  tsup: 6.6.2
   typedoc: 0.15.8
   typescript: 4.9.5
   vite: 4.1.1
@@ -28,7 +28,7 @@ devDependencies:
   prettier: 2.8.4
   saika: 2.13.10
   saika-code-block-buttons: 1.0.1
-  tsup: 6.6.0_uujdqti2krmttzhqvubwnsmcci
+  tsup: 6.6.2_uujdqti2krmttzhqvubwnsmcci
   typedoc: 0.15.8
   typescript: 4.9.5
   vite: 4.1.1
@@ -2792,8 +2792,8 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
-  /tsup/6.6.0_uujdqti2krmttzhqvubwnsmcci:
-    resolution: {integrity: sha512-HxZE7Hj5yNxLFftCXdcJ+Jsax8dI4oKb0bt8fIvd1g/W0FZ46sU1pFBVo15WpOERFcEMH7Hykey/Q+hKO4s9RQ==}
+  /tsup/6.6.2_uujdqti2krmttzhqvubwnsmcci:
+    resolution: {integrity: sha512-+yQ6SI4rVtp1+YpcYOePumJLEVQ896CDNRt9dJ2L/DeMnLf1+FTOCVw5eioLBH0xLdHgogO9NQ6vPNF5MfkSJw==}
     engines: {node: '>=14'}
     hasBin: true
     peerDependencies:
