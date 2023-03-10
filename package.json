@@ -11,6 +11,7 @@
   "author": "2nthony <ant.hu@outlook.com> (https://github.com/2nthony)",
   "main": "dist/vercel-toast.js",
   "module": "dist/vercel-toast.mjs",
+  "browser": "dist/vercel-toast.global.js",
   "types": "dist/vercel-toast.d.ts",
   "exports": {
     ".": {
@@ -28,7 +29,7 @@
     "test": "echo lol",
     "example": "vite",
     "example:build": "vite build",
-    "build": "tsup --entry.vercel-toast src/index.ts --dts --format esm,cjs",
+    "build": "tsup --entry.vercel-toast src/index.ts --dts --format esm,cjs,iife --minify --global-name=vercelToast",
     "docs": "typedoc src/index.ts --out example/public/docs --mode file --readme none --theme minimal --excludeNotExported",
     "build:docs": "npm run docs && npm run example:build",
     "format": "prettier . --write",
