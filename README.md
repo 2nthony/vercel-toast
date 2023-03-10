@@ -9,6 +9,8 @@ Framework-agnostic vercel design's toast component
 
 ## Usage
 
+### Bundler
+
 ```console
 npm i vercel-toast
 ```
@@ -19,6 +21,21 @@ import "vercel-toast/css";
 import { createToast } from "vercel-toast";
 
 createToast("Hi from vercel toast!");
+```
+
+### Browser CDN
+
+```html
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/vercel-toast/dist/vercel-toast.css"
+/>
+
+<script src="https://unpkg.com/vercel-toast"></script>
+
+<script>
+  vercelToast.createToast("Hi from vercel toast!");
+</script>
 ```
 
 ## Documentation
