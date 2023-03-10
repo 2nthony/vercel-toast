@@ -2,21 +2,23 @@
 
 Framework-agnostic vercel design's toast component (≈1KB Gzipped).
 
-## Use via bundler
+## Usage
 
-```bash
+### Bundler
+
+```console
 npm i vercel-toast
 ```
 
-```js
+```ts
+// in js file
 import "vercel-toast/css";
-// import "vercel-toast/dist/vercel-toast.css";
 import { createToast } from "vercel-toast";
 
-createToast("The Evil Rabbit jumped over the fence.");
+createToast("Hi from vercel toast!");
 ```
 
-## Use via CDN
+### Browser CDN
 
 ```html
 <link
@@ -27,7 +29,7 @@ createToast("The Evil Rabbit jumped over the fence.");
 <script src="https://unpkg.com/vercel-toast"></script>
 
 <script>
-  toast.createToast("The Evil Rabbit jumped over the fence.");
+  vercelToast.createToast("Hi from vercel toast!");
 </script>
 ```
 
