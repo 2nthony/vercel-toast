@@ -1,27 +1,27 @@
 {
   "name": "vercel-toast",
-  "description": "Framework-agnostic vercel design's toast component",
   "version": "0.0.0",
+  "description": "Framework-agnostic vercel design's toast component",
+  "author": "2nthony <ant.hu@outlook.com> (https://github.com/2nthony)",
   "license": "MIT",
+  "funding": "https://github.com/sponsors/2nthony",
   "repository": {
     "type": "git",
     "url": "2nthony/vercel-toast"
   },
-  "funding": "https://github.com/sponsors/2nthony",
-  "author": "2nthony <ant.hu@outlook.com> (https://github.com/2nthony)",
-  "main": "dist/vercel-toast.js",
-  "module": "dist/vercel-toast.mjs",
-  "browser": "dist/vercel-toast.global.js",
-  "types": "dist/vercel-toast.d.ts",
   "exports": {
     ".": {
-      "import": "dist/vercel-toast.mjs",
+      "types": "dist/vercel-toast.d.ts",
       "require": "dist/vercel-toast.js",
-      "types": "dist/vercel-toast.d.ts"
+      "import": "dist/vercel-toast.mjs"
     },
     "./css": "dist/vercel-toast.css",
     "./*": "./*"
   },
+  "main": "dist/vercel-toast.js",
+  "module": "dist/vercel-toast.mjs",
+  "browser": "dist/vercel-toast.global.js",
+  "types": "dist/vercel-toast.d.ts",
   "files": [
     "dist"
   ],
@@ -32,17 +32,18 @@
     "build": "tsup --entry.vercel-toast src/index.ts --dts --format esm,cjs,iife --minify --global-name=vercelToast",
     "docs": "typedoc src/index.ts --out example/public/docs --mode file --readme none --theme minimal --excludeNotExported",
     "build:docs": "npm run docs && npm run example:build",
-    "format": "prettier . --write",
+    "lint": "eslint .",
+    "lint-fix": "npm run lint -- --fix",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@2nthony/prettier-config": "1.0.2",
+    "@2nthony/eslint-config": "^1.0.1",
     "@saika/github-corner": "0.1.1",
+    "eslint": "^8.36.0",
     "husky": "3.1.0",
     "lint-staged": "9.5.0",
     "postcss": "8.4.21",
     "postcss-preset-env": "7.8.3",
-    "prettier": "2.8.4",
     "saika": "2.13.10",
     "saika-code-block-buttons": "1.0.1",
     "tsup": "6.6.3",
@@ -60,7 +61,7 @@
   },
   "lint-staged": {
     "*.{ts,js,json,md}": [
-      "prettier --write",
+      "eslint --fix",
       "git add"
     ]
   }

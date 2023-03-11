@@ -17,10 +17,10 @@ npm i vercel-toast
 
 ```ts
 // in js file
-import "vercel-toast/css";
-import { createToast } from "vercel-toast";
+import 'vercel-toast/css'
+import { createToast } from 'vercel-toast'
 
-createToast("Hi from vercel toast!");
+createToast('Hi from vercel toast!')
 ```
 
 ### Browser CDN
