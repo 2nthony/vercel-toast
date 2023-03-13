@@ -11,11 +11,11 @@
   },
   "exports": {
     ".": {
-      "types": "dist/vercel-toast.d.ts",
-      "require": "dist/vercel-toast.js",
-      "import": "dist/vercel-toast.mjs"
+      "types": "./dist/vercel-toast.d.ts",
+      "require": "./dist/vercel-toast.js",
+      "import": "./dist/vercel-toast.mjs"
     },
-    "./css": "dist/vercel-toast.css",
+    "./css": "./dist/vercel-toast.css",
     "./*": "./*"
   },
   "main": "dist/vercel-toast.js",
