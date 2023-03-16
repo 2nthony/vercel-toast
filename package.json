@@ -30,7 +30,7 @@
     "example": "vite",
     "example:build": "vite build",
     "build": "tsup --entry.vercel-toast src/index.ts --dts --format esm,cjs,iife --minify --global-name=vercelToast",
-    "docs": "typedoc src/index.ts --out example/public/docs --mode file --readme none --theme minimal --excludeNotExported",
+    "docs": "typedoc src/index.ts --out example/public/docs --readme none",
     "build:docs": "npm run docs && npm run example:build",
     "lint": "eslint .",
     "lint-fix": "npm run lint -- --fix",
@@ -39,6 +39,7 @@
   "devDependencies": {
     "@2nthony/eslint-config": "^1.0.1",
     "@saika/github-corner": "0.1.3",
+    "@vitejs/plugin-vue2": "^2.2.0",
     "eslint": "^8.36.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.0",

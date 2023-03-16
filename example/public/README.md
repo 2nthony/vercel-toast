@@ -6,11 +6,11 @@ Framework-agnostic vercel design's toast component (≈1KB Gzipped).
 
 ### Bundler
 
-```console
+```sh
 npm i vercel-toast
 ```
 
-```ts
+```js
 // in js file
 import "vercel-toast/css";
 import { createToast } from "vercel-toast";
