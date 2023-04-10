@@ -44,7 +44,7 @@
     "husky": "8.0.3",
     "lint-staged": "13.2.1",
     "postcss": "8.4.21",
-    "postcss-preset-env": "8.3.0",
+    "postcss-preset-env": "8.3.1",
     "saika": "2.13.10",
     "saika-code-block-buttons": "1.0.1",
     "tsup": "6.7.0",
