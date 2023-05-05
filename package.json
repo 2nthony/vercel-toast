@@ -50,7 +50,7 @@
     "tsup": "6.7.0",
     "typedoc": "0.23.27",
     "typescript": "5.0.4",
-    "vite": "4.3.4",
+    "vite": "4.3.5",
     "vue": "2.7.14",
     "vue-template-compiler": "2.7.14",
     "vuedown": "3.2.0"
