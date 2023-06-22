@@ -167,10 +167,6 @@
       opacity: 1;
     }
 
-    &.toast-4 {
-      opacity: 0;
-    }
-
     &:not(:last-of-type) {
       --i: calc(var(--index) - 1);
       transform: translate3d(0, calc(1px - (var(--stack-gap) * var(--i))), 0)
@@ -184,6 +180,10 @@
           opacity: 0;
         }
       }
+    }
+
+    &.toast-4 {
+      opacity: 0;
     }
   }
 
@@ -215,9 +215,9 @@
   .toast-container {
     max-width: 90vw;
     right: 5vw;
-  }
 
-  .toast-container .toast {
-    width: 90vw;
+    & .toast {
+      width: 90vw;
+    }
   }
 }
