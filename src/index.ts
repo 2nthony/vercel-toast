@@ -81,7 +81,7 @@ export class Toast {
       const button = document.createElement('button')
       button.className = 'toast-button cancel-button'
       button.textContent = cancel
-      button.type = 'text'
+      button.type = 'button'
       button.onclick = () => this.destroy()
       inner.appendChild(button)
     }
@@ -90,7 +90,7 @@ export class Toast {
       const button = document.createElement('button')
       button.className = 'toast-button'
       button.textContent = action.text
-      button.type = 'text'
+      button.type = 'button'
       button.onclick = () => {
         this.stopTimer()
         if (action.callback)
@@ -120,14 +120,14 @@ export class Toast {
     el.style.opacity = '0';
     el.style.visibility = 'hidden';
     el.style.transform = 'translateY(10px)';
+
     this.stopTimer()
 
     setTimeout(() => {
       container.removeChild(el)
       instances.delete(this)
+      sortToast()
     }, 250)
-
-    sortToast()
   }
 
   /**

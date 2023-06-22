@@ -20,6 +20,7 @@
     &.default {
       --toast-fg: #000;
       --toast-bg: #fff;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
 
       & .toast-button {
         --button-fg: #fff;
@@ -108,6 +109,8 @@
     }
 
     & .toast-text {
+      display: inline-flex;
+      align-items: center;
       width: 100%;
       height: 100%;
       font-size: 14px;
@@ -133,6 +136,7 @@
       outline: none;
       border: 1px solid var(--button-border);
       transition: opacity 0.25s ease;
+      -webkit-tap-highlight-color: transparent; /* removes the click highlight on mobile devices */
 
       &:hover {
         opacity: 0.8;
