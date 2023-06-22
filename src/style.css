@@ -1,8 +1,81 @@
+/* Variables */
 .toast-container {
   --radius: 5px;
   --stack-gap: 20px;
   --safe-area-gap: env(safe-area-inset-bottom);
 
+  & .toast-inner {
+    --toast-bg: none;
+    --toast-fg: #fff;
+    --toast-border-color: #eaeaea;
+
+    & .toast-button {
+      --button-fg: #000;
+      --button-bg: #fff;
+      --button-border: #fff;
+      --button-border-hover: #fff;
+      --button-fg-hover: #fff;
+    }
+
+    &.default {
+      --toast-fg: #000;
+      --toast-bg: #fff;
+
+      & .toast-button {
+        --button-fg: #fff;
+        --button-bg: #000;
+        --button-border: #000;
+        --button-border-hover: #000;
+        --button-fg-hover: #000;
+      }
+    }
+
+    &.success {
+      --toast-bg: #0076ff;
+      --toast-border-color: var(--toast-bg);
+    }
+
+    &.error {
+      --toast-bg: #e00;
+      --toast-border-color: var(--toast-bg);
+    }
+
+    &.warning {
+      --toast-bg: #f5a623;
+      --toast-border-color: var(--toast-bg);
+    }
+
+    &.dark {
+      --toast-bg: #000;
+      --toast-fg: #fff;
+      --toast-border-color: #333;
+
+      & .toast-button {
+        --button-fg: #000;
+        --button-bg: #fff;
+        --button-border: #fff;
+        --button-border-hover: #fff;
+        --button-fg-hover: #fff;
+
+        &.cancel-button {
+          --cancel-button-bg: #000;
+          --cancel-button-fg: #888;
+          --cancel-button-border: #333;
+
+          &:hover {
+            color: #fff;
+            border-color: var(--button-border);
+            --cancel-button-fg: #000;
+            --cancel-button-border: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* General styles */
+.toast-container {
   position: fixed;
   display: block;
   max-width: 468px;
@@ -21,9 +94,6 @@
     opacity: 0;
 
     & .toast-inner {
-      --toast-bg: none;
-      --toast-fg: #fff;
-      --toast-border-color: #eaeaea;
       box-sizing: border-box;
       border-radius: var(--radius);
       border: 1px solid var(--toast-border-color);
@@ -35,52 +105,6 @@
       background-color: var(--toast-bg);
       height: var(--height);
       transition: all 0.25s ease;
-
-      &.default {
-        --toast-fg: #000;
-        --toast-bg: #fff;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-      }
-
-      &.success {
-        --toast-bg: #0076ff;
-        --toast-border-color: var(--toast-bg);
-      }
-
-      &.error {
-        --toast-bg: #e00;
-        --toast-border-color: var(--toast-bg);
-      }
-
-      &.warning {
-        --toast-bg: #f5a623;
-        --toast-border-color: var(--toast-bg);
-      }
-
-      &.dark {
-        --toast-bg: #000;
-        --toast-fg: #fff;
-        --toast-border-color: #333;
-
-        & .toast-button {
-          --button-fg: #000;
-          --button-bg: #fff;
-          --button-border: #fff;
-          --button-border-hover: #fff;
-          --button-fg-hover: #fff;
-
-          &.cancel-button {
-            --cancel-button-bg: #000;
-            --cancel-button-fg: #888;
-            --cancel-button-border: #333;
-
-            &:hover {
-              color: #fff;
-              border-color: var(--button-border);
-            }
-          }
-        }
-      }
     }
 
     & .toast-text {
@@ -93,37 +117,28 @@
     }
 
     & .toast-button {
-      --button-fg: #000;
-      --button-bg: #fff;
-      --button-border: #fff;
-      --button-border-hover: #fff;
-      --button-fg-hover: #fff;
-      min-width: auto;
-      height: 24px;
+      display: block;
+      font-weight: 500;
+      height: 2rem;
+      border-radius: calc(var(--radius) + 1px);
+      font-size: 0.85rem;
+      padding: 0 12px;
       line-height: 22px;
       padding: 0 10px;
-      font-size: 14px;
       background-color: var(--button-bg);
       color: var(--button-fg);
       white-space: nowrap;
       user-select: none;
       cursor: pointer;
-      vertical-align: middle;
-      border-radius: var(--radius);
       outline: none;
       border: 1px solid var(--button-border);
-      transition: all 0.2s ease;
+      transition: opacity 0.25s ease;
 
       &:hover {
-        border-color: var(--button-border-hover);
-        background-color: transparent;
-        color: var(--button-fg-hover);
+        opacity: 0.8;
       }
 
       &.cancel-button {
-        --cancel-button-bg: #fff;
-        --cancel-button-fg: #666;
-        --cancel-button-border: #eaeaea;
         margin-right: 10px;
         color: var(--cancel-button-fg);
         border-color: var(--cancel-button-border);
@@ -136,24 +151,15 @@
       }
     }
 
-    & .default .toast-button {
-      --button-fg: #fff;
-      --button-bg: #000;
-      --button-border: #000;
-      --button-border-hover: #000;
-      --button-fg-hover: #000;
-    }
-
-    &:after {
+    &::after {
       content: "";
       position: absolute;
       left: 0;
       right: 0;
       top: calc(100% + 1px);
       width: 100%;
-      /* This for destroy the middle toast, still keep `spread` */
       height: 1000px;
-      background: transparent;
+      background-color: transparent;
     }
 
     &.toast-1 {
@@ -161,7 +167,11 @@
       opacity: 1;
     }
 
-    &:not(:last-child) {
+    &.toast-4 {
+      opacity: 0;
+    }
+
+    &:not(:last-of-type) {
       --i: calc(var(--index) - 1);
       transform: translate3d(0, calc(1px - (var(--stack-gap) * var(--i))), 0)
         scale(calc(1 - 0.05 * var(--i)));
@@ -175,41 +185,39 @@
         }
       }
     }
+  }
 
-    &.toast-4 {
-      opacity: 0;
+  &:has(.toast-2):hover {
+    bottom: calc(var(--safe-area-gap, 0px) + 30px);
+  }
+
+  &:hover {
+    & .toast {
+      transform: translate3d(
+        0,
+        calc(var(--hover-offset-y) - var(--stack-gap) * (var(--index) - 1)),
+        0
+      );
+    }
+
+    & .toast-inner {
+      height: var(--height);
+    }
+
+    & .toast-text {
+      opacity: 1 !important;
     }
   }
 }
 
-/* if more than 1, then apply hover effect */
-.toast-container:has(.toast-2):hover {
-  bottom: calc(var(--safe-area-gap, 0px) + 30px);
-}
-
-.toast-container:hover .toast {
-  transform: translate3d(
-    0,
-    calc(var(--hover-offset-y) - var(--stack-gap) * (var(--index) - 1)),
-    0
-  );
-
-  & .toast-inner {
-    height: var(--height);
-  }
-
-  & .toast-text {
-    opacity: 1 !important;
-  }
-}
-
+/* Breakpoints */
 @media (max-width: 440px) {
   .toast-container {
     max-width: 90vw;
     right: 5vw;
+  }
 
-    & .toast {
-      width: 90vw;
-    }
+  .toast-container .toast {
+    width: 90vw;
   }
 }
