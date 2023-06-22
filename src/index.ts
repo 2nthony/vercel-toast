@@ -127,7 +127,7 @@ export class Toast {
       container.removeChild(el)
       instances.delete(this)
       sortToast()
-    }, 250)
+    }, 150)
   }
 
   /**
@@ -196,13 +196,14 @@ export function destoryAllToasts(): void {
 
 function sortToast(): void {
   const toasts = Array.from(instances).reverse().slice(0, 4)
-
   const heights: Array<number> = []
+
+  console.log(' ')
 
   toasts.forEach((toast, index) => {
     const sortIndex = index + 1
     const el = toast.el as HTMLDivElement
-    const height = +(el.getAttribute('data-height') || 0) || el.clientHeight
+    const height = el.clientHeight
 
     heights.push(height)
 
@@ -216,6 +217,8 @@ function sortToast(): void {
       const hoverOffsetY = heights
         .slice(0, sortIndex - 1)
         .reduce((res, next) => (res += next), 0)
+
+      console.log({ hoverOffsetY })
       el.style.setProperty('--hover-offset-y', `-${hoverOffsetY}px`)
     }
     else {
