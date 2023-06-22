@@ -217,8 +217,6 @@ function sortToast(): void {
       const hoverOffsetY = heights
         .slice(0, sortIndex - 1)
         .reduce((res, next) => (res += next), 0)
-
-      console.log({ hoverOffsetY })
       el.style.setProperty('--hover-offset-y', `-${hoverOffsetY}px`)
     }
     else {
