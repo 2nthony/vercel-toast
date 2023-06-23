@@ -118,11 +118,17 @@ export class Toast {
     if (!el)
       return
 
-    this.stopTimer()
-    container.removeChild(el)
-    instances.delete(this)
+    el.style.opacity = '0'
+    el.style.visibility = 'hidden'
+    el.style.transform = 'translateY(10px)'
 
-    sortToast()
+    this.stopTimer()
+
+    setTimeout(() => {
+      container.removeChild(el)
+      instances.delete(this)
+      sortToast()
+    }, 150)
   }
 
   /**
