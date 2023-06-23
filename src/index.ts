@@ -81,7 +81,7 @@ export class Toast {
       const button = document.createElement('button')
       button.className = 'toast-button cancel-button'
       button.textContent = cancel
-      button.type = 'button'
+      button.type = 'text'
       button.onclick = () => this.destroy()
       inner.appendChild(button)
     }
@@ -90,7 +90,7 @@ export class Toast {
       const button = document.createElement('button')
       button.className = 'toast-button'
       button.textContent = action.text
-      button.type = 'button'
+      button.type = 'text'
       button.onclick = () => {
         this.stopTimer()
         if (action.callback)
@@ -196,14 +196,13 @@ export function destoryAllToasts(): void {
 
 function sortToast(): void {
   const toasts = Array.from(instances).reverse().slice(0, 4)
-  const heights: Array<number> = []
 
-  console.log(' ')
+  const heights: Array<number> = []
 
   toasts.forEach((toast, index) => {
     const sortIndex = index + 1
     const el = toast.el as HTMLDivElement
-    const height = el.clientHeight
+    const height = +(el.getAttribute('data-height') || 0) || el.clientHeight
 
     heights.push(height)
 

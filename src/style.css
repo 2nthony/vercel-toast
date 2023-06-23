@@ -1,86 +1,12 @@
-/* Variables */
 .toast-container {
   --radius: 5px;
   --stack-gap: 20px;
   --safe-area-gap: env(safe-area-inset-bottom);
 
-  & .toast-inner {
-    --toast-bg: none;
-    --toast-fg: #fff;
-    --toast-border-color: #eaeaea;
-
-    & .toast-button {
-      --button-fg: #000;
-      --button-bg: #fff;
-      --button-border: #fff;
-      --button-border-hover: #fff;
-      --button-fg-hover: #fff;
-    }
-
-    &.default {
-      --toast-fg: #000;
-      --toast-bg: #fff;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
-
-      & .toast-button {
-        --button-fg: #fff;
-        --button-bg: #000;
-        --button-border: #000;
-        --button-border-hover: #000;
-        --button-fg-hover: #000;
-      }
-    }
-
-    &.success {
-      --toast-bg: #0076ff;
-      --toast-border-color: var(--toast-bg);
-    }
-
-    &.error {
-      --toast-bg: #e00;
-      --toast-border-color: var(--toast-bg);
-    }
-
-    &.warning {
-      --toast-bg: #f5a623;
-      --toast-border-color: var(--toast-bg);
-    }
-
-    &.dark {
-      --toast-bg: #000;
-      --toast-fg: #fff;
-      --toast-border-color: #333;
-
-      & .toast-button {
-        --button-fg: #000;
-        --button-bg: #fff;
-        --button-border: #fff;
-        --button-border-hover: #fff;
-        --button-fg-hover: #fff;
-
-        &.cancel-button {
-          --cancel-button-bg: #000;
-          --cancel-button-fg: #888;
-          --cancel-button-border: #333;
-
-          &:hover {
-            color: #fff;
-            border-color: var(--button-border);
-            --cancel-button-fg: #000;
-            --cancel-button-border: #000;
-          }
-        }
-      }
-    }
-  }
-}
-
-/* General styles */
-.toast-container {
   position: fixed;
   display: block;
   max-width: 468px;
-  bottom: calc(var(--safe-area-gap, 0px) + 28px);
+  bottom: calc(var(--safe-area-gap, 0px) + 20px);
   right: 20px;
   z-index: 5000;
   transition: all 0.4s ease;
@@ -95,6 +21,9 @@
     opacity: 0;
 
     & .toast-inner {
+      --toast-bg: none;
+      --toast-fg: #fff;
+      --toast-border-color: #eaeaea;
       box-sizing: border-box;
       border-radius: var(--radius);
       border: 1px solid var(--toast-border-color);
@@ -104,13 +33,57 @@
       padding: 24px;
       color: var(--toast-fg);
       background-color: var(--toast-bg);
-      height: auto;
-      transition: all 0.15s ease;
+      height: var(--height);
+      transition: all 0.25s ease;
+
+      &.default {
+        --toast-fg: #000;
+        --toast-bg: #fff;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+      }
+
+      &.success {
+        --toast-bg: #0076ff;
+        --toast-border-color: var(--toast-bg);
+      }
+
+      &.error {
+        --toast-bg: #e00;
+        --toast-border-color: var(--toast-bg);
+      }
+
+      &.warning {
+        --toast-bg: #f5a623;
+        --toast-border-color: var(--toast-bg);
+      }
+
+      &.dark {
+        --toast-bg: #000;
+        --toast-fg: #fff;
+        --toast-border-color: #333;
+
+        & .toast-button {
+          --button-fg: #000;
+          --button-bg: #fff;
+          --button-border: #fff;
+          --button-border-hover: #fff;
+          --button-fg-hover: #fff;
+
+          &.cancel-button {
+            --cancel-button-bg: #000;
+            --cancel-button-fg: #888;
+            --cancel-button-border: #333;
+
+            &:hover {
+              color: #fff;
+              border-color: var(--button-border);
+            }
+          }
+        }
+      }
     }
 
     & .toast-text {
-      display: inline-flex;
-      align-items: center;
       width: 100%;
       height: 100%;
       font-size: 14px;
@@ -120,29 +93,37 @@
     }
 
     & .toast-button {
-      display: block;
-      font-weight: 500;
-      height: 2rem;
-      border-radius: calc(var(--radius) + 1px);
-      font-size: 0.85rem;
-      padding: 0 12px;
+      --button-fg: #000;
+      --button-bg: #fff;
+      --button-border: #fff;
+      --button-border-hover: #fff;
+      --button-fg-hover: #fff;
+      min-width: auto;
+      height: 24px;
       line-height: 22px;
       padding: 0 10px;
+      font-size: 14px;
       background-color: var(--button-bg);
       color: var(--button-fg);
       white-space: nowrap;
       user-select: none;
       cursor: pointer;
+      vertical-align: middle;
+      border-radius: var(--radius);
       outline: none;
       border: 1px solid var(--button-border);
-      transition: opacity 0.25s ease;
-      -webkit-tap-highlight-color: transparent; /* removes the click highlight on mobile devices */
+      transition: all 0.2s ease;
 
       &:hover {
-        opacity: 0.8;
+        border-color: var(--button-border-hover);
+        background-color: transparent;
+        color: var(--button-fg-hover);
       }
 
       &.cancel-button {
+        --cancel-button-bg: #fff;
+        --cancel-button-fg: #666;
+        --cancel-button-border: #eaeaea;
         margin-right: 10px;
         color: var(--cancel-button-fg);
         border-color: var(--cancel-button-border);
@@ -155,15 +136,24 @@
       }
     }
 
-    &::after {
+    & .default .toast-button {
+      --button-fg: #fff;
+      --button-bg: #000;
+      --button-border: #000;
+      --button-border-hover: #000;
+      --button-fg-hover: #000;
+    }
+
+    &:after {
       content: "";
       position: absolute;
       left: 0;
       right: 0;
       top: calc(100% + 1px);
       width: 100%;
+      /* This for destroy the middle toast, still keep `spread` */
       height: 1000px;
-      background-color: transparent;
+      background: transparent;
     }
 
     &.toast-1 {
@@ -171,14 +161,14 @@
       opacity: 1;
     }
 
-    &:not(:last-of-type) {
+    &:not(:last-child) {
       --i: calc(var(--index) - 1);
       transform: translate3d(0, calc(1px - (var(--stack-gap) * var(--i))), 0)
         scale(calc(1 - 0.05 * var(--i)));
       opacity: 1;
 
       & .toast-inner {
-        height: auto;
+        height: var(--front-height);
 
         & .toast-text {
           opacity: 0;
@@ -190,31 +180,29 @@
       opacity: 0;
     }
   }
+}
 
-  &:has(.toast-2):hover {
-    bottom: calc(var(--safe-area-gap, 0px) + 30px);
+/* if more than 1, then apply hover effect */
+.toast-container:has(.toast-2):hover {
+  bottom: calc(var(--safe-area-gap, 0px) + 30px);
+}
+
+.toast-container:hover .toast {
+  transform: translate3d(
+    0,
+    calc(var(--hover-offset-y) - var(--stack-gap) * (var(--index) - 1)),
+    0
+  );
+
+  & .toast-inner {
+    height: var(--height);
   }
 
-  &:hover {
-    & .toast {
-      transform: translate3d(
-        0,
-        calc(var(--hover-offset-y) - var(--stack-gap) * (var(--index) - 1)),
-        0
-      );
-    }
-
-    & .toast-inner {
-      height: auto;
-    }
-
-    & .toast-text {
-      opacity: 1 !important;
-    }
+  & .toast-text {
+    opacity: 1 !important;
   }
 }
 
-/* Breakpoints */
 @media (max-width: 440px) {
   .toast-container {
     max-width: 90vw;
