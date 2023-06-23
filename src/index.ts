@@ -115,11 +115,12 @@ export class Toast {
 
   destroy(): void {
     const { el } = this
-    if (!el) return
+    if (!el)
+      return
 
-    el.style.opacity = '0';
-    el.style.visibility = 'hidden';
-    el.style.transform = 'translateY(10px)';
+    el.style.opacity = '0'
+    el.style.visibility = 'hidden'
+    el.style.transform = 'translateY(10px)'
 
     this.stopTimer()
 
