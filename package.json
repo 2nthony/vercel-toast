@@ -42,7 +42,7 @@
     "@vitejs/plugin-vue2": "^2.2.0",
     "eslint": "^8.36.0",
     "husky": "8.0.3",
-    "lint-staged": "13.2.2",
+    "lint-staged": "13.2.3",
     "postcss": "8.4.24",
     "postcss-preset-env": "8.5.1",
     "saika": "2.13.10",
