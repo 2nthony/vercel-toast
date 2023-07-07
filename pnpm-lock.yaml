@@ -13,7 +13,7 @@ devDependencies:
     version: 0.1.3
   '@vitejs/plugin-vue2':
     specifier: ^2.2.0
-    version: 2.2.0(vite@4.4.1)(vue@2.7.14)
+    version: 2.2.0(vite@4.4.2)(vue@2.7.14)
   eslint:
     specifier: ^8.36.0
     version: 8.36.0
@@ -45,8 +45,8 @@ devDependencies:
     specifier: 5.0.4
     version: 5.0.4
   vite:
-    specifier: 4.4.1
-    version: 4.4.1
+    specifier: 4.4.2
+    version: 4.4.2
   vue:
     specifier: 2.7.14
     version: 2.7.14
@@ -1218,14 +1218,14 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-vue2@2.2.0(vite@4.4.1)(vue@2.7.14):
+  /@vitejs/plugin-vue2@2.2.0(vite@4.4.2)(vue@2.7.14):
     resolution: {integrity: sha512-1km7zEuZ/9QRPvzXSjikbTYGQPG86Mq1baktpC4sXqsXlb02HQKfi+fl8qVS703JM7cgm24Ga9j+RwKmvFn90A==}
     engines: {node: ^14.18.0 || >= 16.0.0}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
       vue: ^2.7.0-0
     dependencies:
-      vite: 4.4.1
+      vite: 4.4.2
       vue: 2.7.14
     dev: true
 
@@ -4374,8 +4374,8 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /vite@4.4.1:
-    resolution: {integrity: sha512-8mmwPlsy7t+ZcTme7vdbVGuZ3Tri+lrLXr6hsF5UHdyYyARPPPMtM16QlqC9TZuCd5j3NmWs1rwka3cVSRHZTw==}
+  /vite@4.4.2:
+    resolution: {integrity: sha512-zUcsJN+UvdSyHhYa277UHhiJ3iq4hUBwHavOpsNUGsTgjBeoBlK8eDt+iT09pBq0h9/knhG/SPrZiM7cGmg7NA==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
