@@ -51,8 +51,8 @@
     "typedoc": "0.23.27",
     "typescript": "5.0.4",
     "vite": "4.5.0",
-    "vue": "2.7.14",
-    "vue-template-compiler": "2.7.14",
+    "vue": "2.7.15",
+    "vue-template-compiler": "2.7.15",
     "vuedown": "3.2.0"
   },
   "lint-staged": {
