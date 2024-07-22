@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@2nthony/eslint-config':
-    specifier: ^1.0.1
-    version: 1.1.2(@vue/compiler-sfc@3.4.19)(eslint@8.57.0)(typescript@5.0.4)
+    specifier: ^2.0.0
+    version: 2.1.10(@vue/compiler-sfc@3.4.19)(eslint@8.57.0)(typescript@5.0.4)
   '@saika/github-corner':
     specifier: 0.1.3
     version: 0.1.3
@@ -59,15 +59,15 @@ devDependencies:
 
 packages:
 
-  /@2nthony/eslint-config@1.1.2(@vue/compiler-sfc@3.4.19)(eslint@8.57.0)(typescript@5.0.4):
-    resolution: {integrity: sha512-I4TtpISSqyJSupMIbT3Lj3Ycj3DK2WI+CJWAXMRD2XdAX39J2ax/+wNHzeaBsoHGHgpDIaUuz7HQQt4n0ZQEZQ==}
+  /@2nthony/eslint-config@2.1.10(@vue/compiler-sfc@3.4.19)(eslint@8.57.0)(typescript@5.0.4):
+    resolution: {integrity: sha512-75EjEt8OozjpIvwWk2VVyfhDhezyBd5SttYW7AXKW4Wtp8AfLxyYFLYLkZtp8+qgg68WNdXRb38C+DrTxsMs1Q==}
     peerDependencies:
-      eslint: '>=7.4.0'
+      eslint: '>=8.23.0'
     dependencies:
       '@antfu/eslint-config': 2.6.4(@vue/compiler-sfc@3.4.19)(eslint-plugin-react@7.33.2)(eslint@8.57.0)(typescript@5.0.4)
       eslint: 8.57.0
       eslint-plugin-react: 7.33.2(eslint@8.57.0)
-      local-pkg: 0.4.3
+      local-pkg: 0.5.0
     transitivePeerDependencies:
       - '@unocss/eslint-plugin'
       - '@vue/compiler-sfc'
@@ -3448,11 +3448,6 @@ packages:
 
   /loadjs@3.6.1:
     resolution: {integrity: sha512-AZEBw2GWdJk2IzBgQ+Wohoao5j+t0rajqK8dJu8jQqgYxDTxhmCt0ayMo/vCa0ZAMvZxnJcam6uLICfnVd8KAw==}
-    dev: true
-
-  /local-pkg@0.4.3:
-    resolution: {integrity: sha512-SFppqq5p42fe2qcZQqqEOiVRXl+WCP1MdT6k7BDEW1j++sp5fIY+/fdRQitvKgB5BrBcmrs5m/L0v2FrU5MY1g==}
-    engines: {node: '>=14'}
     dev: true
 
   /local-pkg@0.5.0:
