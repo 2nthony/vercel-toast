@@ -47,7 +47,7 @@
     "postcss-preset-env": "8.5.1",
     "saika": "2.13.10",
     "saika-code-block-buttons": "1.0.1",
-    "tsup": "6.7.0",
+    "tsup": "8.3.5",
     "typedoc": "0.23.27",
     "typescript": "5.0.4",
     "vite": "4.5.5",
