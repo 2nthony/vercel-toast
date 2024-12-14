@@ -48,7 +48,7 @@
     "saika": "2.13.10",
     "saika-code-block-buttons": "1.0.1",
     "tsup": "6.7.0",
-    "typedoc": "0.23.27",
+    "typedoc": "0.27.5",
     "typescript": "5.0.4",
     "vite": "4.5.5",
     "vue": "2.7.16",
